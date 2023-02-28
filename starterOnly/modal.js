@@ -12,6 +12,11 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
+const closeBtn = document.querySelector(".close");
+const closeConfirm = document.querySelector(".close-confirm")
+
+
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -90,4 +95,17 @@ numberInput.addEventListener("input", function() {
 
 //quels tournois
 var tournois = document.getElementById("location1");
+
+
+// les modales
+
+function validate() {
+  if (!document.getElementById("checkbox1").checked) {
+    alert("Please accept the terms and conditions before submitting.");
+    return false;
+  }
+  // If the checkbox is checked, submit the form
+  return true;
+}
+
 

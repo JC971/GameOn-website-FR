@@ -158,7 +158,7 @@ main {
 }
 
 .bground {
-  display: none;
+  display:none ;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -304,7 +304,7 @@ input[data-error]::after {
   height: 32px;
   opacity: 1;
   cursor: pointer;
-  transform: scale(0.7);
+  transform: scale(.7);
 }
 .close:before,
 .close:after {
@@ -314,6 +314,7 @@ input[data-error]::after {
   height: 33px;
   width: 3px;
   background-color: #fff;
+  transform: scale(2);
 }
 .close:before {
   transform: rotate(45deg);
