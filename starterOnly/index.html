@@ -108,9 +108,12 @@
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
+              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?
+                <abbr title="Une ville doit être sélectionnée"></abbr>
+              </p>
               <div
                 class="formData">
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -122,6 +125,7 @@
                   <span class="checkbox-icon"></span>
                   New York</label
                 >
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -133,6 +137,7 @@
                   <span class="checkbox-icon"></span>
                   San Francisco</label
                 >
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -144,6 +149,7 @@
                   <span class="checkbox-icon"></span>
                   Seattle</label
                 >
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -155,6 +161,7 @@
                   <span class="checkbox-icon"></span>
                   Chicago</label
                 >
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -206,6 +213,14 @@
                 value="c'est parti"
               />
             </form>
+            <!--        ajout bouton close confirm -->
+            <div class="confirm-modal d-none">
+              <div class="message">Merci de! Votre réservation a bien été reçue!</div>
+              <input type="button"
+              class="button btn-submit close-confirm"
+              value="fermer"
+              />
+            </div>
           </div>
         </div>
       </div>
