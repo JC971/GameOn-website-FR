@@ -9,37 +9,23 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
+const modalBtn = document.querySelector("#inscritBtn");
+const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 
-const closeModalBtn = document.querySelectorAll(".close");
-/*const closeConfirm = document.querySelector("#close-confirm")*/
+const closeModalBtn = document.querySelector(".close");
 
 
 
 // launch modal event
 
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalBtn.addEventListener("click", launchModal);
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-
-
-/*
-let btn = document.querySelector(".btn-submit");
-console.log(btn)
-
-//ajout d'un evènement au click
-
-btn.addEventListener("click", function (event) {
-  let first = document.getElementById("first");
-  console.log(first.value);
-  event.preventDefault()
-  alert('Remplissez le formulaire')
-}) */
 
 
 //je cible le bouton c'est parti 
@@ -59,7 +45,7 @@ function validateFirstNameInput(input) {
 }
 
 var firstNameInput = document.getElementById("first");
-firstNameInput.addEventListener("input", function() {
+firstNameInput.addEventListener("input", function () {
   validateFirstNameInput(firstNameInput);
 });
 
@@ -76,16 +62,14 @@ function validateLastNameInput(input) {
 
 
 var lastNameInput = document.getElementById("last");
-lastNameInput.addEventListener("input", function() {
+lastNameInput.addEventListener("input", function () {
   validateLastNameInput(lastNameInput);
 });
 
 // nombre de tournois 
-
-
 var numberInput = document.getElementById("quantity");
 
-numberInput.addEventListener("input", function() {
+numberInput.addEventListener("input", function () {
   var inputValue = parseInt(numberInput.value);
   if (isNaN(inputValue) || inputValue < 0 || inputValue > 10) {
     numberInput.setCustomValidity("Please enter a number between 0 and 10");
@@ -109,14 +93,10 @@ function validate() {
   return true;
 }
 
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-
 // close modal event
-closeModalBtn.forEach(elt => elt.addEventListener("click", closeModal));
-
-
+closeModale.addEventListener('click', function (e) {
+  modalbg.style.display = "none";
+})
 // close modal
 function launchModal() {
   modalbg.style.display = "block";
