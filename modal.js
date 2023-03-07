@@ -17,23 +17,24 @@ const closeModalBtn = document.querySelector(".close");
 
 
 
-// launch modal event
+// Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
 
-modalBtn.addEventListener("click", launchModal);
+modalBtn.addEventListener("click", launchModal );
 
-// launch modal form
+// Fonction pour lancer la modale
 function launchModal() {
+  //on change le comportement de la modale qui etait en mode display none pour le passe en mode display block
   modalbg.style.display = "block";
 }
 
 
 
-//je cible le bouton c'est parti 
+//je cible le bouton c'est parti dont la class est btn-submit
 
 let btn = document.querySelector(".btn-submit");
 console.log(btn)
 
-//je rentre les informations pour vérifier si c'est un prénom valide
+//je rentre les informations pour vérifier si c'est un prénom valide a l'aide de la fonction validateFirstNameInput
 
 function validateFirstNameInput(input) {
   var firstNameRegex = /^[a-zA-Z]+$/;
@@ -43,13 +44,13 @@ function validateFirstNameInput(input) {
     input.setCustomValidity("");
   }
 }
-
+//je selectionne les donnees du texte avec son id first
 var firstNameInput = document.getElementById("first");
 firstNameInput.addEventListener("input", function () {
   validateFirstNameInput(firstNameInput);
 });
 
-// je rentre les informations pour vérifier le nom
+// je rentre les informations pour vérifier le Nom
 
 function validateLastNameInput(input) {
   var lastNameRegex = /^[a-zA-Z]+$/;
@@ -82,7 +83,7 @@ numberInput.addEventListener("input", function () {
 //quels tournois
 var tournois = document.getElementById("location1");
 
-// les modales conditions 
+// les  conditions d'utilisation
 
 function validate() {
   if (!document.getElementById("checkbox1").checked) {
@@ -93,7 +94,11 @@ function validate() {
   return true;
 }
 
-// close modal event
+//bouton radio choix 
+
+
+// close modal event avec icone croix
+
 closeModale.addEventListener('click', function (e) {
   modalbg.style.display = "none";
 })
@@ -103,4 +108,5 @@ function launchModal() {
 }
 
 //hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+
 

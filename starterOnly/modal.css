@@ -493,7 +493,7 @@ footer {
     content: unset;
   }
   .hero-content .btn-signup {
-    display: none;
+    display:none ;
   }
   .hero-headline {
     font-size: 4.5rem;
@@ -528,3 +528,6 @@ footer {
   }
 }
 
+.d-none{
+  display: none;
+}
