@@ -15,8 +15,6 @@ const formData = document.querySelectorAll(".formData");
 
 const closeModalBtn = document.querySelector(".close");
 
-
-
 // Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
 
 modalBtn.addEventListener("click", launchModal);
@@ -41,7 +39,7 @@ function validateFirstNameInput(input) {
     input.setCustomValidity("");
   }
 }
-//je selectionne les donnees du texte avec son id first
+//je selectionne les donnees du champ avec son id first
 var firstNameInput = document.getElementById("first");
 firstNameInput.addEventListener("input", function () {
   validateFirstNameInput(firstNameInput);
@@ -87,4 +85,18 @@ function validate() {
 }
 
 
-//
+
+/*
+surname.addEventListener('input', checkFormCompletion);
+lastName.addEventListener('input', checkFormCompletion);
+email.addEventListener('input', checkFormCompletion);
+birth.addEventListener('input', checkFormCompletion);
+quantity.addEventListener('input', checkFormCompletion);
+
+function checkFormCompletion() {
+  if (surname.value && lastName.value && email.value && birth.value && quantity.value) {
+    alert('merci');
+    form.reset();
+    form.style.display = 'none'
+  }
+}*/
