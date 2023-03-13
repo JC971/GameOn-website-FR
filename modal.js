@@ -1,11 +1,3 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
@@ -15,9 +7,15 @@ const formData = document.querySelectorAll(".formData");
 
 const closeModalBtn = document.querySelector(".close");
 
-// Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
+function editNav() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 
-modalBtn.addEventListener("click", launchModal);
 
 // Fonction pour lancer la modale
 function launchModal() {
@@ -28,6 +26,9 @@ function launchModal() {
 closeModale.addEventListener('click', function (e) {
   modalbg.style.display = "none";
 })
+//
+//small
+
 
 //je rentre les informations pour vérifier si c'est un prénom valide a l'aide de la fonction validateFirstNameInput
 
@@ -84,7 +85,9 @@ function validate() {
   return true;
 }
 
+// Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
 
+modalBtn.addEventListener("click", launchModal);
 
 /*
 surname.addEventListener('input', checkFormCompletion);

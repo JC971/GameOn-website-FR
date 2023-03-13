@@ -101,6 +101,9 @@ img {
     margin-top: -15px;
   }
 } 
+.small_text{
+  display: none;
+}
 
 main {
   font-size: 130%;
