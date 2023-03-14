@@ -47,14 +47,12 @@ function validateFirstNameInput(firstname) {
 
     // 
   } else if (firstname.length > 2) {
-    document.getElementById("first").style.color = "green";
+    document.getElementById("first").style.color = "green ";
     document.getElementById("first").style.border = "lightGreen 3px solid";
     document.getElementById("small_text").style.display = "none";
   }
 
 };
-
-
 
 
 //je rentre les informations pour vérifier si c'est un nom valide a l'aide de la fonction validateNameInput
@@ -64,9 +62,16 @@ function validateLastNameInput(lastname) {
   if (lastname.length < 3) {
     console.log("le nom n'est pas valide");
     document.getElementById("small_nom").style.display = "block";
-    
+    document.getElementById("last").style.border = "red 3px solid";
+    document.getElementById("first").style.color = "red ";
+  } else {
+    console.log('le nom est valide')
+    document.getElementById("small_nom").style.display = "none";
+    document.getElementById("last").style.border = "green 3px solid";
+    document.getElementById("last").style.color = "green ";
+   
   }
-}
+};
 
 
 
