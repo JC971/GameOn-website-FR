@@ -101,8 +101,14 @@ img {
     margin-top: -15px;
   }
 } 
-.small_text{
+#small_text{
   display: none;
+  color: rgb(209, 28, 28);
+}
+
+#small_nom{
+  display: none;
+  color: rgb(209, 28, 28);
 }
 
 main {
@@ -531,5 +537,5 @@ footer {
 }
 
 .d-none{
-  display: none;
+  display: block;
 }

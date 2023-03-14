@@ -52,16 +52,17 @@
       <div class="content">
         <span id="closeModale" class="close"></span>
         <div class="modal-body">
-          <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
+          <form name="reserve" action="index.html" method="post" >
             <div class="formData">
               <label>Prénom</label><br>
-              <input class="text-control" type="text" required="required" id="first" name="first" minlength="2"/><br>
-              <small id="small_text" class="small_text">bonjour</small>
+              <input class="text-control" type="text" required="required" id="first" name="first" /><br>
+              <small id="small_text" class="small_text">Prénom non valide</small>
               
             </div>
             <div class="formData">
               <label>Nom</label><br>
               <input class="text-control" type="text" required="requi" id="last" name="last" /><br>
+              <small id="small_nom">Le nom n'est pas valide</small>
             </div>
             <div class="formData">
               <label>E-mail</label><br>
@@ -125,7 +126,10 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="c'est parti" />
+
+            <input class="btn-submit" id="parti" type="submit" class="button" value="c'est parti" />
+
+
           </form>
           <!--        ajout bouton close confirm -->
           <div class="confirm-modal d-none">
