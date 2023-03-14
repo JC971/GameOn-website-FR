@@ -7,6 +7,7 @@ const modalBtn = document.querySelector("#inscritBtn");
 const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
+const email = document.getElementById("email");
 
 
 function editNav() {
@@ -67,12 +68,12 @@ function validateLastNameInput(lastname) {
    
   }
 };
-
+/*
 //je selectionne les donnees du champ avec son id first
 var firstNameInput = document.getElementById("first");
 firstNameInput.addEventListener("input", function () {
   validateFirstNameInput(firstNameInput);
-});
+});*/
 
 
 // nombre de tournois 
