@@ -39,6 +39,7 @@ img {
 }
 .main-navbar {
     float: right;
+   
 }
 .topnav a {
   float: left;
@@ -480,7 +481,11 @@ input[data-error]::after {
   font-weight: bolder;
 }
 .hero-section > .btn-signup {
-  display: none;
+  width: 300px;
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+ 
 }
 footer {
   padding-left: 2vw;
@@ -489,8 +494,10 @@ footer {
 }
 @media screen and (max-width: 800px) {
   .hero-section {
-    display: block;
+    display: grid;
     box-shadow: unset;
+    
+
   }
   .hero-content {
     background: #fff;
@@ -499,6 +506,7 @@ footer {
   }
   .hero-content::after {
     content: unset;
+   
   }
   .hero-content .btn-signup {
     display:none ;
