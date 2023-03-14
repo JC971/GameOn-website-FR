@@ -68,6 +68,14 @@ function validateLastNameInput(lastname) {
    
   }
 };
+
+//infos pour les emails
+//function validaEmailInput(email)
+
+
+
+
+
 /*
 //je selectionne les donnees du champ avec son id first
 var firstNameInput = document.getElementById("first");

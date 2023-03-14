@@ -491,9 +491,6 @@ footer {
 
     margin: 32px auto 10px;
     padding: 12px 35px;
-   
-    
-    
     
   }
 
@@ -538,9 +535,14 @@ footer {
  
 
 
- 
-
-
 .d-none{
+  display: block;
+}
+
+#small_text{
+  display: none;
+}
+
+#small_nom{
   display: none;
 }
