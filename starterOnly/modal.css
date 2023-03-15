@@ -557,3 +557,10 @@ footer {
   font-size: 18px;
   color: red;
 }
+
+.button.btn-submit.close-confirm{
+  display: none;
+}
+.message{
+  display: none;
+}

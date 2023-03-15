@@ -77,7 +77,7 @@ function validaEmailInput(email) {
   if (pattern.test(email)) {
     console.log("valid email address");
     document.getElementById("email").style.color = "green";
-
+    document.getElementById("error-email").style.display = "none";
 
 
   } else {
