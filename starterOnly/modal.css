@@ -546,3 +546,7 @@ footer {
 #small_nom{
   display: none;
 }
+
+#error-email{
+  display: none;
+}

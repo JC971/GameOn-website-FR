@@ -72,8 +72,19 @@ function validateLastNameInput(lastname) {
 //infos pour les emails
 //function validaEmailInput(email)
 
+function validaEmailInput(email) {
+  var pattern = /^[^@\s]+@[^@\s]+\.[a-z]{2,3}$/;
+  if (pattern.test(email)) {
+    console.log("valid email address");
+    document.getElementById("email").style.color = "green";
 
 
+
+  } else {
+    console.log("invalid email address");
+    document.getElementById("email").style.color = "red";
+  }
+}
 
 
 /*
@@ -122,6 +133,10 @@ partiBtn.addEventListener('click', function (event) {
   //
   var textNom = nom.value;
   validateLastNameInput(textNom);
+
+  var textemail = email.value;
+  validaEmailInput(textemail);
+
 
 });
 
