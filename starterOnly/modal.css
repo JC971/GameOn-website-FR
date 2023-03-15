@@ -537,16 +537,23 @@ footer {
 
 .d-none{
   display: block;
+
 }
 
 #small_text{
   display: none;
+  font-size: 18px;
+  color: red;
 }
 
 #small_nom{
   display: none;
+  font-size: 18px;
+  color: red;
 }
 
 #error-email{
   display: none;
+  font-size: 18px;
+  color: red;
 }

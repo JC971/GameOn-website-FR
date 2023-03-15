@@ -83,6 +83,7 @@ function validaEmailInput(email) {
   } else {
     console.log("invalid email address");
     document.getElementById("email").style.color = "red";
+    document.getElementById("error-email").style.display = "block";
   }
 }
 
