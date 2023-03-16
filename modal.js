@@ -8,6 +8,7 @@ const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
+const myform = document.getElementById("myform");
 
 
 function editNav() {
@@ -72,7 +73,7 @@ function validateLastNameInput(lastname) {
 //infos pour les emails
 //function validaEmailInput(email)
 
-function validaEmailInput(email) {
+function validateEmailInput(email) {
   var pattern = /^[^@\s]+@[^@\s]+\.[a-z]{2,3}$/;
   if (pattern.test(email)) {
     console.log("valid email address");
@@ -85,15 +86,30 @@ function validaEmailInput(email) {
     document.getElementById("email").style.color = "red";
     document.getElementById("error-email").style.display = "block";
   }
-}
+};
+
+//
 
 
+
+//date
 /*
-//je selectionne les donnees du champ avec son id first
-var firstNameInput = document.getElementById("first");
-firstNameInput.addEventListener("input", function () {
-  validateFirstNameInput(firstNameInput);
+birthdateInput.addEventListener('input', () => {
+  const birthdate = new Date(birthdateInput.value);
+  
+  if (isNaN(birthdate.getTime())) {
+    birthdateInput.setCustomValidity('Please enter a valid date');
+  } else {
+    birthdateInput.setCustomValidity('');
+  }
 });*/
+/*
+function birthdateInput() {
+  const birthdate = new Date(birthdateInput.value);
+  if (isNaN(birthdate.getTime())) {
+    birthdateInput.setCustomValidity('Please enter a valid date');
+  }
+}*/
 
 
 // nombre de tournois 
@@ -134,10 +150,15 @@ partiBtn.addEventListener('click', function (event) {
   //
   var textNom = nom.value;
   validateLastNameInput(textNom);
-
+//
   var textemail = email.value;
-  validaEmailInput(textemail);
+  validateEmailInput(textemail);
 
+  
 
 });
+
+
+
+
 
