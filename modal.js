@@ -119,6 +119,7 @@ numberInput.addEventListener("input", function () {
   var inputValue = parseInt(numberInput.value);
   if (isNaN(inputValue) || inputValue < 0 || inputValue > 30) {
     numberInput.setCustomValidity("Please enter a number between 0 and 10");
+    
   } else {
     numberInput.setCustomValidity("");
   }

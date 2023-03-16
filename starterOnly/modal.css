@@ -551,3 +551,9 @@ footer {
 .message{
   display: none;
 }
+
+#nombre-invalide{
+  display: none;
+  font-size: 18px;
+  color: red;
+}
