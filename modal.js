@@ -9,7 +9,7 @@ const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
 const myform = document.getElementById("myform");
-
+const nbreTournoi = document.getElementById("quantity")
 
 function editNav() {
   var x = document.getElementById("myTopnav");
@@ -119,9 +119,14 @@ numberInput.addEventListener("input", function () {
   var inputValue = parseInt(numberInput.value);
   if (isNaN(inputValue) || inputValue < 0 || inputValue > 30) {
     numberInput.setCustomValidity("Please enter a number between 0 and 10");
-    
+    console.log("Please enter a number between 0 and 10");
+    document.getElementById("nombre-invalide").style.display = "block";
+    document.getElementById("quantity").style.color = "red";
   } else {
     numberInput.setCustomValidity("");
+    document.getElementById("nombre-invalide").style.display = "none";
+    document.getElementById("quantity").style.color = "green";
+    
   }
 });
 
