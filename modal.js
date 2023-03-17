@@ -3,13 +3,16 @@ const modalbg = document.querySelector(".bground");
 const partiBtn = document.querySelector("#parti");
 const prenom = document.querySelector("#first");
 const nom = document.querySelector("#last")
+
 const modalBtn = document.querySelector("#inscritBtn");
+
 const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
 const myform = document.getElementById("myform");
-const nbreTournoi = document.getElementById("quantity")
+const nbreTournoi = document.getElementById("quantity");
+const condition = document.getElementById('checkbox1');
 
 function editNav() {
   var x = document.getElementById("myTopnav");
@@ -132,14 +135,18 @@ numberInput.addEventListener("input", function () {
 
 // les  conditions d'utilisation
 
+/*
 function validate() {
   if (!document.getElementById("checkbox1").checked) {
     alert("Acceptez les conditions d'utilisation avant de valider.");
-    return false;
+    
+    document.getElementById('checkbox1').style.display= "block"
+
   }
   // If the checkbox is checked, submit the form
   return true;
-}
+}*/
+
 
 // Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
 

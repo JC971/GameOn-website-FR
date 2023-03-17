@@ -514,7 +514,7 @@ footer {
 /*--------------media-------------*/
 
 
-@media screen and (max-width: 1200px){
+@media screen and (min-width: 800px){
 
 }
 
@@ -557,3 +557,10 @@ footer {
   font-size: 18px;
   color: red;
 }
+
+.conditions{
+  display: none;
+  font-size: 18px;
+  color: red;
+}
+
