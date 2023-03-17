@@ -6,6 +6,8 @@ const nom = document.querySelector("#last")
 
 const modalBtn = document.querySelector("#inscritBtn");
 
+
+
 const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
