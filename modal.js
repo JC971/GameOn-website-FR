@@ -5,7 +5,7 @@ const prenom = document.querySelector("#first");
 const nom = document.querySelector("#last")
 
 const modalBtn = document.querySelector("#inscritBtn");
-
+const modaleBtn = document.querySelector("#secondInscritBtn");
 
 
 const closeModale = document.querySelector("#closeModale");
@@ -153,6 +153,8 @@ function validate() {
 // Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
 
 modalBtn.addEventListener("click", launchModal);
+//avec largeur supérieure à 800px
+modaleBtn.addEventListener("click", launchModal);
 
 //fermeture de la modale 
 closeModale.addEventListener('click', closeModal);
