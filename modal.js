@@ -16,6 +16,7 @@ const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
 
+
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -57,6 +58,8 @@ function validateFirstNameInput(firstname) {
 
 };
 
+
+
 //je rentre les informations pour vérifier si c'est un nom valide a l'aide de la fonction validateNameInput
 
 function validateLastNameInput(lastname) {
@@ -94,8 +97,12 @@ function validateEmailInput(email) {
 };
 
 //
-
-
+function validDate(dateString) {
+  if (!dateString) {
+    alert('aie')
+    console.log('pas bon du tout ')
+  }
+}
 
 //date
 /*
@@ -107,14 +114,18 @@ birthdateInput.addEventListener('input', () => {
   } else {
     birthdateInput.setCustomValidity('');
   }
-});*/
-/*
+});
+*//*
 function birthdateInput() {
   const birthdate = new Date(birthdateInput.value);
+  /*
   if (isNaN(birthdate.getTime())) {
     birthdateInput.setCustomValidity('Please enter a valid date');
   }
+  if(birthdate.length"")
 }*/
+
+
 
 
 // nombre de tournois 
@@ -137,7 +148,7 @@ numberInput.addEventListener("input", function () {
 
 // les  conditions d'utilisation
 
-/*
+
 function validate() {
   if (!document.getElementById("checkbox1").checked) {
     alert("Acceptez les conditions d'utilisation avant de valider.");
@@ -147,7 +158,8 @@ function validate() {
   }
   // If the checkbox is checked, submit the form
   return true;
-}*/
+  
+}
 
 
 // Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
@@ -170,10 +182,20 @@ partiBtn.addEventListener('click', function (event) {
 //
   var textemail = email.value;
   validateEmailInput(textemail);
-
+//
   
-
+ 
 });
+
+
+partiBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  var textDate = birthdate.value;
+  validDate(textDate)
+
+})
+
+
 
 
 
