@@ -12,6 +12,7 @@ const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
+const date =document.querySelector(".no-date")
 const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
@@ -99,8 +100,10 @@ function validateEmailInput(email) {
 //
 function validDate(dateString) {
   if (!dateString) {
-    alert('aie')
-    console.log('pas bon du tout ')
+    console.log('pas de données ')
+    document.querySelector(".no-date").style.display="block"
+  } else {
+    document.querySelector('.no-date').style.color= "green"
   }
 }
 

@@ -501,9 +501,7 @@ footer {
     text-align: center;
     
   }
-  #inscritBtn{
-   
-  }
+ 
 
 #secondInscritBtn{
   display: none;
@@ -565,6 +563,12 @@ footer {
 }
 
 .conditions{
+  display: none;
+  font-size: 18px;
+  color: red;
+}
+
+.no-date{
   display: none;
   font-size: 18px;
   color: red;
