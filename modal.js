@@ -98,7 +98,7 @@ function validateEmailInput(email) {
   }
 };
 
-//indication date de naissance
+//Champ date de naissance
 
 function validDate(dateString) {
   if (!dateString) {
@@ -110,26 +110,6 @@ function validDate(dateString) {
 }
 
 //date
-/*
-birthdateInput.addEventListener('input', () => {
-  const birthdate = new Date(birthdateInput.value);
-  
-  if (isNaN(birthdate.getTime())) {
-    birthdateInput.setCustomValidity('Please enter a valid date');
-  } else {
-    birthdateInput.setCustomValidity('');
-  }
-});
-*//*
-function birthdateInput() {
-  const birthdate = new Date(birthdateInput.value);
-  /*
-  if (isNaN(birthdate.getTime())) {
-    birthdateInput.setCustomValidity('Please enter a valid date');
-  }
-  if(birthdate.length"")
-}*/
-
 
 
 
@@ -157,7 +137,7 @@ numberInput.addEventListener("input", function () {
 function validate() {
   if (!document.getElementById("checkbox1").checked) {
     alert("Acceptez les conditions d'utilisation avant de valider.");
-    
+    console.log('ok')
     document.getElementById('checkbox1').style.display= "block"
 
   }
@@ -189,6 +169,7 @@ partiBtn.addEventListener('click', function (event) {
   validateEmailInput(textemail);
 //
   
+  
  
 });
 
@@ -196,9 +177,19 @@ partiBtn.addEventListener('click', function (event) {
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textDate = birthdate.value;
-  validDate(textDate)
+  validDate(textDate);
 
-})
+
+});
+// reaction du bouton c'est parti à la non sélection des condditions d'utilisation
+partiBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  
+  var textValidation = checkbox1.value;
+  validate(textValidation)
+
+  // Add your validation code here
+});
 
 
 
