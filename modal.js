@@ -138,11 +138,12 @@ function validate() {
   if (!document.getElementById("checkbox1").checked) {
     alert("Acceptez les conditions d'utilisation avant de valider.");
     console.log('ok')
-    document.getElementById('checkbox1').style.display= "block"
+    //document.getElementById('checkbox1').style.display= "block"
 
   }
   // If the checkbox is checked, submit the form
   return true;
+  
   
 }
 
