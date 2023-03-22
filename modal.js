@@ -12,6 +12,7 @@ const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
+const naissance = document.getElementById('birthdate')
 const date =document.querySelector(".no-date")
 const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
@@ -97,13 +98,14 @@ function validateEmailInput(email) {
   }
 };
 
-//
+//indication date de naissance
+
 function validDate(dateString) {
   if (!dateString) {
     console.log('pas de données ')
     document.querySelector(".no-date").style.display="block"
   } else {
-    document.querySelector('.no-date').style.color= "green"
+    document.getElementById("birthdate").style.color= "green"
   }
 }
 
