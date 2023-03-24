@@ -117,9 +117,24 @@ function validDate(dateString) {
 
 // nombre de tournois 
 var numberInput = document.getElementById("quantity");
+function validateTournois(param) {
+  if (param === ""|| param >30) {
+    // affcher un message d'erreur bordur rouge
+    document.getElementById("quantity").style.borderColor = "red";
+    // erreur si nombre depasse les 30 
+    
 
-numberInput.addEventListener("input", function () {
-  var inputValue = parseInt(numberInput.value);
+  } else {
+    document.getElementById("quantity").style.borderColor = "green";
+    }
+
+  }
+
+
+  ;
+  
+  
+  /*
   if (isNaN(inputValue) || inputValue < 0 || inputValue > 30) {
     numberInput.setCustomValidity("Please enter a number between 0 and 10");
     console.log("Please enter a number between 0 and 10");
@@ -132,7 +147,7 @@ numberInput.addEventListener("input", function () {
     document.getElementById("quantity").style.color = "green";
     
   }
-});
+});*/
 
 
 
@@ -174,7 +189,9 @@ partiBtn.addEventListener('click', function (event) {
   var textemail = email.value;
   validateEmailInput(textemail);
 //
-  
+  var texttounoi = quantity.value;
+  console.log("variable texte tournoi",texttounoi);
+  validateTournois(texttounoi);
 
 });
 
@@ -202,7 +219,8 @@ partiBtn.addEventListener("click", function (event) {
   
 
   
-})
+});
+
 
 
 
