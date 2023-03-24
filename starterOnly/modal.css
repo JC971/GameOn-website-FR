@@ -384,10 +384,13 @@ input[data-error]::after {
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  /*
+  grid-template-rows: repeat(3, 1fr);*/
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
+  /*-------*/
+  border-bottom: 7px solid #7e7a7a70;
 }
 .hero-content {
   padding: 51px 67px;
@@ -452,7 +455,8 @@ input[data-error]::after {
 /*-----------------*/
 .hero-section > .btn-signup {
   display: none;
-}*/
+}
+
 footer {
   padding-left: 2vw;
   padding-right: 2vw;

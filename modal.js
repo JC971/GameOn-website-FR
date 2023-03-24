@@ -105,7 +105,9 @@ function validDate(dateString) {
     console.log('pas de données ')
     document.querySelector(".no-date").style.display="block"
   } else {
-    document.getElementById("birthdate").style.color= "green"
+    document.getElementById("birthdate").style.color = "green";
+    document.querySelector('.no-date').style.display = 'none';
+    
   }
 }
 
@@ -123,6 +125,7 @@ numberInput.addEventListener("input", function () {
     console.log("Please enter a number between 0 and 10");
     document.getElementById("nombre-invalide").style.display = "block";
     document.getElementById("quantity").style.color = "red";
+    alert("nombre incorrect")
   } else {
     numberInput.setCustomValidity("");
     document.getElementById("nombre-invalide").style.display = "none";
@@ -130,6 +133,8 @@ numberInput.addEventListener("input", function () {
     
   }
 });
+
+
 
 // les  conditions d'utilisation
 
@@ -141,7 +146,7 @@ function validate() {
     //document.getElementById('checkbox1').style.display= "block"
 
   }
-  // If the checkbox is checked, submit the form
+  // condition réalisée ...
   return true;
   
   
@@ -170,8 +175,7 @@ partiBtn.addEventListener('click', function (event) {
   validateEmailInput(textemail);
 //
   
-  
- 
+
 });
 
 
@@ -179,9 +183,8 @@ partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textDate = birthdate.value;
   validDate(textDate);
-
-
 });
+
 // reaction du bouton c'est parti à la non sélection des condditions d'utilisation
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
@@ -192,6 +195,14 @@ partiBtn.addEventListener('click', function (event) {
   // Add your validation code here
 });
 
+
+partiBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  var textNumbre = document.getElementById('quantity');
+  
+
+  
+})
 
 
 
