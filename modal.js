@@ -44,37 +44,53 @@ function closeModal() {
 
 function validateFirstNameInput(firstname) {
   console.log("validate first name", firstname.length);
+    //le prénom doit obligatoirement avoir plus de deux caractères
   if (firstname.length < 3)  {
     console.log("entrer un prénom valide");
+
     //faire apparaitre le messge d'erreur
     document.getElementById("small_text").style.display = "block";
-    document.getElementById("first").style.border = "red 3px solid";
-    document.getElementById("first").style.color = "red ";
-  
-    // 
-  } else if (firstname.length > 2) {
-    document.getElementById("first").style.color = "green ";
-    document.getElementById("first").style.border = "lightGreen 3px solid";
-    document.getElementById("small_text").style.display = "none";
-  }
 
+    // pour souligner l'erreur je mets les bordures en rouge
+    document.getElementById("first").style.border = "red 3px solid";
+
+    // le texte est lui aussi en rouge
+    document.getElementById("first").style.color = "red ";
+  // si les conditions du dessus ne sont pas remplies alors
+
+  } else if (firstname.length > 2) {
+    // le message d'erreur n'apparait plus
+    document.getElementById("small_text").style.display = "none";
+    // l'écriture apparait en couleur verte
+    document.getElementById("first").style.color = "green ";
+    // la bordure apparait de couleur verte
+    document.getElementById("first").style.border = "lightGreen 3px solid";
+    
+  }
 };
 
-
-
-//je rentre les informations pour vérifier si c'est un nom valide a l'aide de la fonction validateNameInput
+//je crée une fonction validateLastNameInput qui me sert à vérifier si le nom entré est valide
 
 function validateLastNameInput(lastname) {
   console.log('validate lastname', lastname.length);
+    // si le nom ne contient pas plus de 2 lettre alors le champ ne sera pas validé
   if (lastname.length < 3) {
     console.log("le nom n'est pas valide");
+    // je fais apparaitre un message d'erreur
     document.getElementById("small_nom").style.display = "block";
+    // la bordure sera de couleur rouge
     document.getElementById("last").style.border = "red 3px solid";
+    // l'écriture sera elle aussi en rouge
     document.getElementById("first").style.color = "red ";
+    // si le nom contient plus de deux lettres alors
+
   } else {
     console.log('le nom est valide')
+    //le message d'erreur disparait 
     document.getElementById("small_nom").style.display = "none";
+    //les bordures sont de couleur verte
     document.getElementById("last").style.border = "green 3px solid";
+    // les lettres sont vertes aussi
     document.getElementById("last").style.color = "green ";
    
   }
@@ -84,56 +100,72 @@ function validateLastNameInput(lastname) {
 //function validaEmailInput(email)
 
 function validateEmailInput(email) {
+    //
   var pattern = /^[^@\s]+@[^@\s]+\.[a-z]{2,3}$/;
+    // pattern.test que les valeurs qui vont être donner correspondent bien au valeurs de var pattern
   if (pattern.test(email)) {
     console.log("valid email address");
+    // la couleur des écritures est verte
     document.getElementById("email").style.color = "green";
+    // pas de message d'erreur
     document.getElementById("error-email").style.display = "none";
-
+    // bordure du bouton verte
+    document.getElementById("email").style.border = "green 3px solid";
 
   } else {
     console.log("invalid email address");
+    // si c'est pas le cas alors: écriture en rouge
     document.getElementById("email").style.color = "red";
+    // message d'erreur apparait 
     document.getElementById("error-email").style.display = "block";
+    // bordure du bouton rouge
+    document.getElementById("email").style.border = "red 3px solid";
   }
 };
 
-//Champ date de naissance
+//Champ date de naissance. la fonction est :validDate
 
 function validDate(dateString) {
-  if (!dateString) {
-    console.log('pas de données ')
-    document.querySelector(".no-date").style.display="block"
+  // si les données ne sont pas conforment à la chaine de caractère date alors
+  if (!dateString){
+    console.log('pas de données ');
+    // l'affichage d'un message d'erreur apparait
+    document.querySelector(".no-date").style.display = "block";
+    
   } else {
-    document.getElementById("birthdate").style.color = "green";
+    // le message d'erreur n'est plus utile
     document.querySelector('.no-date').style.display = 'none';
+
+    document.getElementById("birthdate").style.color = "green";
+    
     
   }
-}
-
-//date
-
+};
 
 
 // nombre de tournois 
 var numberInput = document.getElementById("quantity");
 function validateTournois(param) {
   if (param === ""|| param >30) {
-    // affcher un message d'erreur bordur rouge
+    // affcher un message d'erreur bordure rouge
     document.getElementById("quantity").style.borderColor = "red";
     // erreur si nombre depasse les 30 
+    document.getElementById("quantity").style.color = "red";
+    //affichage d'un message d'erreur
+document.getElementById("nombre-invalide").style.display="block"
     
 
   } else {
+    //quand le nombre entré est correct les bordures sont vertes
     document.getElementById("quantity").style.borderColor = "green";
+    document.getElementById("quantity").style.color = "green";
+    // on cache le message d'erreur
+    document.getElementById("nombre-invalide").style.display = "none";
     }
 
-  }
+  };
 
 
-  ;
-  
-  
   /*
   if (isNaN(inputValue) || inputValue < 0 || inputValue > 30) {
     numberInput.setCustomValidity("Please enter a number between 0 and 10");
@@ -209,17 +241,10 @@ partiBtn.addEventListener('click', function (event) {
   var textValidation = checkbox1.value;
   validate(textValidation)
 
-  // Add your validation code here
-});
-
-
-partiBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  var textNumbre = document.getElementById('quantity');
-  
-
   
 });
+
+
 
 
 
