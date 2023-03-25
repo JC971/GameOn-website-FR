@@ -45,7 +45,8 @@ function closeModal() {
 function validateFirstNameInput(firstname) {
   console.log("validate first name", firstname.length);
     //le prénom doit obligatoirement avoir plus de deux caractères
-  if (firstname.length < 3)  {
+    // et que si il n'y a pas que des lettres en minuscules ou majuscule
+  if (firstname.length < 3 || !/^[a-zA-Z]+$/.test(firstname))  {
     console.log("entrer un prénom valide");
 
     //faire apparaitre le messge d'erreur
@@ -165,40 +166,19 @@ document.getElementById("nombre-invalide").style.display="block"
 
   };
 
-
-  /*
-  if (isNaN(inputValue) || inputValue < 0 || inputValue > 30) {
-    numberInput.setCustomValidity("Please enter a number between 0 and 10");
-    console.log("Please enter a number between 0 and 10");
-    document.getElementById("nombre-invalide").style.display = "block";
-    document.getElementById("quantity").style.color = "red";
-    alert("nombre incorrect")
-  } else {
-    numberInput.setCustomValidity("");
-    document.getElementById("nombre-invalide").style.display = "none";
-    document.getElementById("quantity").style.color = "green";
-    
-  }
-});*/
-
-
-
 // les  conditions d'utilisation
-
-
 function validate() {
+    // si la case n'est pas cochée
   if (!document.getElementById("checkbox1").checked) {
+    // une alerte est envoyée et bloque la soumission
     alert("Acceptez les conditions d'utilisation avant de valider.");
-    console.log('ok')
-    //document.getElementById('checkbox1').style.display= "block"
-
+    console.log('c pas bon du toutu');
+   
   }
-  // condition réalisée ...
+  // si la case est cochée la fonction renvoie true le formulaire est soumi
   return true;
   
-  
-}
-
+};
 
 // Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
 
