@@ -18,6 +18,8 @@ const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
 
+const maxDate = new Date();
+
 
 function editNav() {
   var x = document.getElementById("myTopnav");
@@ -93,15 +95,15 @@ function validateLastNameInput(lastname) {
     document.getElementById("last").style.border = "green 3px solid";
     // les lettres sont vertes aussi
     document.getElementById("last").style.color = "green ";
+    
    
   }
 };
 
-//infos pour les emails
 //function validaEmailInput(email)
 
 function validateEmailInput(email) {
-    //
+    
   var pattern = /^[^@\s]+@[^@\s]+\.[a-z]{2,3}$/;
     // pattern.test que les valeurs qui vont être donner correspondent bien au valeurs de var pattern
   if (pattern.test(email)) {
@@ -132,7 +134,11 @@ function validDate(dateString) {
     console.log('pas de données ');
     // l'affichage d'un message d'erreur apparait
     document.querySelector(".no-date").style.display = "block";
+
+    //
     
+    
+    //
   } else {
     // le message d'erreur n'est plus utile
     document.querySelector('.no-date').style.display = 'none';
@@ -207,7 +213,6 @@ partiBtn.addEventListener('click', function (event) {
 
 });
 
-
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textDate = birthdate.value;
@@ -221,7 +226,6 @@ partiBtn.addEventListener('click', function (event) {
   var textValidation = checkbox1.value;
   validate(textValidation)
 
-  
 });
 
 
