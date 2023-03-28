@@ -2,7 +2,7 @@
 const modalbg = document.querySelector(".bground");
 const partiBtn = document.querySelector("#parti");
 const prenom = document.querySelector("#first");
-const nom = document.querySelector("#last")
+const nom = document.querySelector("#last");
 
 const modalBtn = document.querySelector("#inscritBtn");
 const modaleBtn = document.querySelector("#secondInscritBtn");
@@ -12,8 +12,9 @@ const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
-const naissance = document.getElementById('birthdate')
-const date =document.querySelector(".no-date")
+//const fillMail = document.querySelector('.email-vide');
+const naissance = document.getElementById('birthdate');
+const date = document.querySelector(".no-date");
 const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
@@ -86,6 +87,8 @@ function validateLastNameInput(lastname) {
     // l'écriture sera elle aussi en rouge
     document.getElementById("first").style.color = "red ";
     // si le nom contient plus de deux lettres alors
+    // supprimer le message incitatif 
+    document.querySelector('.email-vide')
 
   } else {
     console.log('le nom est valide')
@@ -106,6 +109,7 @@ function validateEmailInput(email) {
     
   var pattern = /^[\w.-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/
     // pattern.test que les valeurs qui vont être donner correspondent bien au valeurs de var pattern
+  
   if (pattern.test(email)) {
     console.log("valid email address");
     // la couleur des écritures est verte
@@ -114,6 +118,8 @@ function validateEmailInput(email) {
     document.getElementById("error-email").style.display = "none";
     // bordure du bouton verte
     document.getElementById("email").style.border = "green 3px solid";
+    document.querySelector('.email-vide').style.display = 'none';
+
 
   } else {
     console.log("invalid email address");
@@ -123,6 +129,7 @@ function validateEmailInput(email) {
     document.getElementById("error-email").style.display = "block";
     // bordure du bouton rouge
     document.getElementById("email").style.border = "red 3px solid";
+    document.querySelector('.email-vide').style.display = 'none';
   }
 };
 
