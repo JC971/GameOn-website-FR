@@ -150,6 +150,7 @@ function validDate(dateString) {
     console.log('pas de données ');
     // l'affichage d'un message d'erreur apparait
     document.querySelector(".no-date").style.display = "block";
+    document.getElementById('birthdate').style.border = "red 3px solid";
 
   } else {
     // le message d'erreur n'est plus utile
@@ -160,7 +161,7 @@ function validDate(dateString) {
     // la bordure apparait en vert avec une bordure de 3px
     document.getElementById('birthdate').style.border = "lightGreen 3px solid";
     // la couleur de fond apparait en vert
-    document.getElementById('birthdate').style.backgroundColor = "green";
+    
     
     
   }
