@@ -49,7 +49,7 @@ function validateFirstNameInput(firstname) {
   console.log("validate first name", firstname.length);
     //le prénom doit obligatoirement avoir plus de deux caractères
     // et que si il n'y a pas que des lettres en minuscules ou majuscule
-  if (firstname.length < 3 || !/^[a-zA-Z]+$/.test(firstname))  {
+  if (firstname.length < 3 || !/^[a-zA-Z-]+$/.test(firstname))  {
     console.log("entrer un prénom valide");
 
     //faire apparaitre le messge d'erreur
@@ -78,7 +78,7 @@ function validateFirstNameInput(firstname) {
 function validateLastNameInput(lastname) {
   console.log('validate lastname', lastname.length);
     // si le nom ne contient pas plus de 2 lettre alors le champ ne sera pas validé
-  if (lastname.length < 3) {
+  if (lastname.length < 3 || !/^[a-zA-Z]+$/.test(lastname)) {
     console.log("le nom n'est pas valide");
     // je fais apparaitre un message d'erreur
     document.getElementById("small_nom").style.display = "block";
