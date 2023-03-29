@@ -18,6 +18,8 @@ const date = document.querySelector(".no-date");
 const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
+const ville = document.querySelector('.ville-choix');
+
 
 const maxDate = new Date();
 
@@ -149,10 +151,6 @@ function validDate(dateString) {
     // l'affichage d'un message d'erreur apparait
     document.querySelector(".no-date").style.display = "block";
 
-    //
-    
-    
-    //
   } else {
     // le message d'erreur n'est plus utile
     document.querySelector('.no-date').style.display = 'none';
@@ -190,7 +188,27 @@ function validateTournois(param) {
     document.getElementById("nombre-invalide").style.display = "none";
     }
 
-  };
+};
+  //
+
+// Parcours de tous les boutons radio
+
+function isRadioButtonSelected() {
+  var radioButtons = document.getElementsByName('location');
+  for (var i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].checked) {
+      console.log('vous avez bien choisi une ville');
+      document.querySelector('.choix-ville').style.display = "none";
+      return true;
+      
+    } else {
+      console.log("entrez le nom d'une ville");
+      document.querySelector('.choix-ville').style.display = "block";
+      
+    }
+  }
+  
+};
 
 // les  conditions d'utilisation
 function validate() {
@@ -203,6 +221,7 @@ function validate() {
   }
   // si la case est cochée la fonction renvoie true le formulaire est soumi
   return true;
+ 
   
 };
 
@@ -248,10 +267,20 @@ partiBtn.addEventListener('click', function (event) {
 
 });
 
+
+//boutons radio
+
+partiBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  var textLocation = location.value;
+  isRadioButtonSelected(textLocation)
+});
+
+
 // fermer le formulaire
 
 
-form.addEventListener('submit', (e) => {
+myform.addEventListener('submit', (e) => {
   e.preventDefault();
 })
 
@@ -260,3 +289,15 @@ form.addEventListener('submit', (e) => {
 
 
 
+// Sélectionnez le bouton ou le formulaire que vous souhaitez écouter
+//var button = document.getElementById("myButton");
+
+// Ajoutez un événement de clic sur le bouton ou le formulaire
+//button.addEventListener("click", function(event) {
+  //event.preventDefault(); // Empêche la page de recharger lors de la soumission du formulaire
+  //if (isRadioButtonSelected()) {
+   // console.log("Un bouton radio est sélectionné.");
+  //} else {
+    //console.log("Aucun bouton radio n'est sélectionné.");
+ // }
+//});

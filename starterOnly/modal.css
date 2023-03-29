@@ -582,3 +582,9 @@ footer {
   color: red;
   font-size: 16px;
 }
+
+.choix-ville{
+  color: red;
+  font-size: 16px;
+  display: none;
+}
