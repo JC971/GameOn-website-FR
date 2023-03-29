@@ -109,7 +109,7 @@ function validateLastNameInput(lastname) {
 
 function validateEmailInput(email) {
     
-  var pattern = /^[\w.-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/
+  var pattern =  /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     // pattern.test que les valeurs qui vont être donner correspondent bien au valeurs de var pattern
   
   if (pattern.test(email)) {
