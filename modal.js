@@ -157,7 +157,12 @@ function validDate(dateString) {
     // le message d'erreur n'est plus utile
     document.querySelector('.no-date').style.display = 'none';
 
-    document.getElementById("birthdate").style.color = "green";
+    // la couleur de fond apparait en blanc
+    document.getElementById("birthdate").style.color = "white";
+    // la bordure apparait en vert avec une bordure de 3px
+    document.getElementById('birthdate').style.border = "lightGreen 3px solid";
+    // la couleur de fond apparait en vert
+    document.getElementById('birthdate').style.backgroundColor = "green";
     
     
   }
@@ -173,13 +178,14 @@ function validateTournois(param) {
     // erreur si nombre depasse les 30 
     document.getElementById("quantity").style.color = "red";
     //affichage d'un message d'erreur
-document.getElementById("nombre-invalide").style.display="block"
+    document.getElementById("nombre-invalide").style.display="block"
     
 
   } else {
     //quand le nombre entré est correct les bordures sont vertes
-    document.getElementById("quantity").style.borderColor = "green";
-    document.getElementById("quantity").style.color = "green";
+    document.getElementById('quantity').style.border = "lightGreen 3px solid";
+    document.getElementById("quantity").style.backgroundColor = "green";
+    document.getElementById("quantity").style.color = "white";
     // on cache le message d'erreur
     document.getElementById("nombre-invalide").style.display = "none";
     }
