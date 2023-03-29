@@ -65,11 +65,12 @@ function validateFirstNameInput(firstname) {
   } else if (firstname.length > 2) {
     // le message d'erreur n'apparait plus
     document.getElementById("small_text").style.display = "none";
-    // l'écriture apparait en couleur verte
-    document.getElementById("first").style.color = "green ";
     // la bordure apparait de couleur verte
     document.getElementById("first").style.border = "lightGreen 3px solid";
-    
+    //l'écriture passe en blanc
+    document.getElementById("first").style.color = "white ";
+    // la couleur de fond passe en vert
+    document.getElementById("first").style.backgroundColor = "green ";
   }
 };
 
@@ -94,11 +95,12 @@ function validateLastNameInput(lastname) {
     console.log('le nom est valide')
     //le message d'erreur disparait 
     document.getElementById("small_nom").style.display = "none";
-    //les bordures sont de couleur verte
-    document.getElementById("last").style.border = "green 3px solid";
+    //les bordures sont de couleur blanche
+    document.getElementById("last").style.border = "lightGreen 3px solid";
     // les lettres sont vertes aussi
-    document.getElementById("last").style.color = "green ";
-    
+    document.getElementById("last").style.color = "white ";
+     // la couleur de fond passe en vert
+     document.getElementById("last").style.backgroundColor = "green";
    
   }
 };
@@ -112,12 +114,17 @@ function validateEmailInput(email) {
   
   if (pattern.test(email)) {
     console.log("valid email address");
-    // la couleur des écritures est verte
-    document.getElementById("email").style.color = "green";
-    // pas de message d'erreur
-    document.getElementById("error-email").style.display = "none";
+    // la couleur des écritures est blanche
+    document.getElementById("email").style.color = "white";
     // bordure du bouton verte
-    document.getElementById("email").style.border = "green 3px solid";
+    document.getElementById("email").style.border = "lightGreen 3px solid";
+    //la couleur de fond en vert
+    document.getElementById('email').style.backgroundColor = 'green';
+
+    // pas de message d'erreur car le mail est correct
+    document.getElementById("error-email").style.display = "none";
+    
+  // l'email n'est pas vide donc ce message d'erreur n'apparait plus
     document.querySelector('.email-vide').style.display = 'none';
 
 
@@ -235,8 +242,12 @@ partiBtn.addEventListener('click', function (event) {
 
 });
 
+// fermer le formulaire
 
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+})
 
 
 
