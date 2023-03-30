@@ -3,11 +3,8 @@ const modalbg = document.querySelector(".bground");
 const partiBtn = document.querySelector("#parti");
 const prenom = document.querySelector("#first");
 const nom = document.querySelector("#last");
-
 const modalBtn = document.querySelector("#inscritBtn");
 const modaleBtn = document.querySelector("#secondInscritBtn");
-
-
 const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
@@ -49,12 +46,12 @@ function closeModal() {
 
 function validateFirstNameInput(firstname) {
   console.log("validate first name", firstname.length);
-    //le prénom doit obligatoirement avoir plus de deux caractères
-    // et que si il n'y a pas que des lettres en minuscules ou majuscule
+    //le prénom doit obligatoirement au moins deux caractères
+    // dans le prénom doivent apparaitre que des lettre en minuscules ou majuscules et -
   if (firstname.length < 3 || !/^[a-zA-Z-]+$/.test(firstname))  {
     console.log("entrer un prénom valide");
 
-    //faire apparaitre le messge d'erreur
+    //Si ce n'est pas le cas faire apparaitre le messge d'erreur
     document.getElementById("small_text").style.display = "block";
 
     // pour souligner l'erreur je mets les bordures en rouge
@@ -72,7 +69,8 @@ function validateFirstNameInput(firstname) {
     //l'écriture passe en blanc
     document.getElementById("first").style.color = "white ";
     // la couleur de fond passe en vert
-    document.getElementById("first").style.backgroundColor = "green ";
+    document.getElementById("first").style.backgroundColor = "green "; 
+    return true;
   }
 };
 
@@ -150,6 +148,7 @@ function validDate(dateString) {
     console.log('pas de données ');
     // l'affichage d'un message d'erreur apparait
     document.querySelector(".no-date").style.display = "block";
+    document.querySelector(".no-date").style.color = "red";
     document.getElementById('birthdate').style.border = "red 3px solid";
 
   } else {
@@ -161,12 +160,11 @@ function validDate(dateString) {
     // la bordure apparait en vert avec une bordure de 3px
     document.getElementById('birthdate').style.border = "lightGreen 3px solid";
     // la couleur de fond apparait en vert
-    
+    document.getElementById('birthdate').style.backgroundColor = "green";
     
     
   }
 };
-
 
 // nombre de tournois 
 var numberInput = document.getElementById("quantity");
@@ -222,12 +220,9 @@ function validate() {
   }
   // si la case est cochée la fonction renvoie true le formulaire est soumi
   return true;
- 
-  
 };
 
 // Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
-
 modalBtn.addEventListener("click", launchModal);
 //avec largeur supérieure à 800px
 modaleBtn.addEventListener("click", launchModal);
@@ -235,34 +230,37 @@ modaleBtn.addEventListener("click", launchModal);
 //fermeture de la modale 
 closeModale.addEventListener('click', closeModal);
 
-// parti 
+// parti prénom
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textPrenom = prenom.value;
+  console.log("le prénom est", textPrenom);
   validateFirstNameInput(textPrenom);
-  //
+  //nom de famille
   var textNom = nom.value;
+  console.log('nom', textNom);
   validateLastNameInput(textNom);
-//
+//e-mail
   var textemail = email.value;
+  console.log('la valeur pour mail', textemail);
   validateEmailInput(textemail);
-//
+// nombre de tournois
   var texttounoi = quantity.value;
-  console.log("variable texte tournoi",texttounoi);
+  console.log('le nombre de tournois', texttounoi);
   validateTournois(texttounoi);
 
 });
-
+// date anniversaire
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textDate = birthdate.value;
+  console.log("la date d'anniversaire", textDate);
   validDate(textDate);
 });
 
-// reaction du bouton c'est parti à la non sélection des condditions d'utilisation
+// 
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
-  
   var textValidation = checkbox1.value;
   validate(textValidation)
 
@@ -281,11 +279,28 @@ partiBtn.addEventListener('click', function (event) {
 // fermer le formulaire
 
 
-myform.addEventListener('submit', (e) => {
+myform.addEventListener('submit', e => {
   e.preventDefault();
+  form_verify();
 })
 
 
+//function myformVerify
+
+function form_verify() {
+  // les valeurs des inputs
+  var textPrenom = prenom.value;
+  var textNom = nom.value;
+  var textemail = email.value;
+  var texttounoi = quantity.value;
+  var textDate = birthdate.value;
+  var textValidation = checkbox1.value;
+  var textLocation = location.value;
+// verification prenom
+  if (textPrenom === "") {
+    
+  }
+};
 
 
 
