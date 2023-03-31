@@ -141,16 +141,16 @@ function validateEmailInput(email) {
 };
 
 //Champ date de naissance. la fonction est :validDate
-
+/*
 function validDate(dateString) {
   // si les données ne sont pas conforment à la chaine de caractère date alors
-  if (!dateString){
+  if (!dateString) {
     console.log('pas de données ');
     // l'affichage d'un message d'erreur apparait
     document.querySelector(".no-date").style.display = "block";
     document.querySelector(".no-date").style.color = "red";
     document.getElementById('birthdate').style.border = "red 3px solid";
-
+ 
   } else {
     // le message d'erreur n'est plus utile
     document.querySelector('.no-date').style.display = 'none';
@@ -163,6 +163,39 @@ function validDate(dateString) {
     document.getElementById('birthdate').style.backgroundColor = "green";
     
     
+  }
+};*/
+function validDate(dateString) {
+  // si les données ne sont pas conforment à la chaine de caractère date alors
+  if (!dateString){
+    console.log('pas de données ');
+    // l'affichage d'un message d'erreur apparait
+    document.querySelector(".no-date").style.display = "block";
+    document.querySelector(".no-date").style.color = "red";
+    document.getElementById('birthdate').style.border = "red 3px solid";
+
+  } else {
+    // Vérifier si la date est supérieure à la date actuelle
+    var now = Date.now();
+    var birthdate = Date.parse(dateString);
+
+    if (birthdate > now) {
+      // la date est supérieure à la date actuelle
+      document.querySelector('.no-date').innerHTML = 'La date est supérieure à la date actuelle';
+      document.querySelector('.no-date').style.display = 'block';
+      document.querySelector('.no-date').style.color = 'red';
+      document.getElementById('birthdate').style.border = 'red 3px solid';
+      document.getElementById("birthdate").style.color = "red";
+    } else {
+      // le message d'erreur n'est plus utile
+      document.querySelector('.no-date').style.display = 'none'
+      // la couleur de fond apparait en blanc
+      document.getElementById("birthdate").style.color = "white";
+      // la bordure apparait en vert avec une bordure de 3px
+      document.getElementById('birthdate').style.border = "lightGreen 3px solid";
+      // la couleur de fond apparait en vert
+      document.getElementById('birthdate').style.backgroundColor = "green";
+    }
   }
 };
 
