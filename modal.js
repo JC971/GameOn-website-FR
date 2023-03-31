@@ -140,64 +140,57 @@ function validateEmailInput(email) {
   }
 };
 
-//Champ date de naissance. la fonction est :validDate
-/*
+
+//function validation de la date
+
 function validDate(dateString) {
   // si les données ne sont pas conforment à la chaine de caractère date alors
-  if (!dateString) {
-    console.log('pas de données ');
-    // l'affichage d'un message d'erreur apparait
-    document.querySelector(".no-date").style.display = "block";
-    document.querySelector(".no-date").style.color = "red";
-    document.getElementById('birthdate').style.border = "red 3px solid";
- 
-  } else {
-    // le message d'erreur n'est plus utile
-    document.querySelector('.no-date').style.display = 'none';
+  // Calculer l'âge à partir de la date de naissance
+  var age = (new Date().getTime() - new Date(dateString).getTime()) / (1000 * 60 * 60 * 24 * 365);
 
-    // la couleur de fond apparait en blanc
+  // je vérifie si l'âge est égal ou supérieur à 18 ans
+  if (age < 18) {
+    // Afficher un message d'erreur si l'âge est inférieur à 18 ans
+    // je me sers de ma balise no-date pour faire apparaitre un message ...
+    document.querySelector('.no-date').innerHTML = 'Vous devez avoir 18 ans ou plus';
+    // je stylise la bordure
+    document.getElementById('birthdate').style.border = 'red 3px solid';
+    //la couleur d'écriture en rouge 
+    document.getElementById("birthdate").style.color = "red";
+  } else {
+    // Masquer le message d'erreur si l'âge est égal ou supérieur à 18 ans
+    document.querySelector('.no-date').style.display = 'none'
+    // La couleur de fond apparaît en blanc
     document.getElementById("birthdate").style.color = "white";
-    // la bordure apparait en vert avec une bordure de 3px
+    // La bordure apparaît en vert avec une bordure de 3px
     document.getElementById('birthdate').style.border = "lightGreen 3px solid";
-    // la couleur de fond apparait en vert
+    // La couleur de fond apparaît en vert
     document.getElementById('birthdate').style.backgroundColor = "green";
-    
-    
-  }
-};*/
-function validDate(dateString) {
-  // si les données ne sont pas conforment à la chaine de caractère date alors
-  if (!dateString){
-    console.log('pas de données ');
-    // l'affichage d'un message d'erreur apparait
-    document.querySelector(".no-date").style.display = "block";
-    document.querySelector(".no-date").style.color = "red";
-    document.getElementById('birthdate').style.border = "red 3px solid";
 
-  } else {
-    // Vérifier si la date est supérieure à la date actuelle
-    var now = Date.now();
-    var birthdate = Date.parse(dateString);
+    if (!dateString) {
+      console.log('pas de données ');
+      // l'affichage d'un message d'erreur apparait quand aucune date n'est saisie
+      document.querySelector(".no-date").style.display = "block";
+      // le message d'erreur s'écrit en rouge
+      document.getElementById('birthdate').style.color = "red";
+      document.getElementById('birthdate').style.backgroundColor = "white";
+      // l'écriture de fond de la date reste le noir
+      document.getElementById('birthdate').style.color = "black";
+      document.getElementById('birthdate').style.border = "red 3px solid";
 
-    if (birthdate > now) {
-      // la date est supérieure à la date actuelle
-      document.querySelector('.no-date').innerHTML = 'La date est supérieure à la date actuelle';
-      document.querySelector('.no-date').style.display = 'block';
-      document.querySelector('.no-date').style.color = 'red';
-      document.getElementById('birthdate').style.border = 'red 3px solid';
-      document.getElementById("birthdate").style.color = "red";
-    } else {
-      // le message d'erreur n'est plus utile
-      document.querySelector('.no-date').style.display = 'none'
-      // la couleur de fond apparait en blanc
-      document.getElementById("birthdate").style.color = "white";
-      // la bordure apparait en vert avec une bordure de 3px
-      document.getElementById('birthdate').style.border = "lightGreen 3px solid";
-      // la couleur de fond apparait en vert
-      document.getElementById('birthdate').style.backgroundColor = "green";
+      } else {
+        // le message d'erreur n'est plus utile
+        document.querySelector('.no-date').style.display = 'none'
+        // la couleur de fond apparait en blanc
+        document.getElementById("birthdate").style.color = "white";
+        // la bordure apparait en vert avec une bordure de 3px
+        document.getElementById('birthdate').style.border = "lightGreen 3px solid";
+        // la couleur de fond apparait en vert
+        document.getElementById('birthdate').style.backgroundColor = "green";
+      }
     }
   }
-};
+
 
 // nombre de tournois 
 var numberInput = document.getElementById("quantity");
@@ -209,7 +202,8 @@ function validateTournois(param) {
     document.getElementById("quantity").style.color = "red";
     //affichage d'un message d'erreur
     document.getElementById("nombre-invalide").style.display="block"
-    
+    // la couleur de fond du bouton est blanche
+    document.getElementById("quantity").style.backgroundColor= "white";
 
   } else {
     //quand le nombre entré est correct les bordures sont vertes
@@ -309,8 +303,9 @@ partiBtn.addEventListener('click', function (event) {
 
 // fermer le formulaire
 
-document.getElementById("myform").addEventListener("submit", function () {
-  alert("message envoyé")
+myform.addEventListener("submit", function () {
+  alert("okdk")
+  document.getElementById("modal-btn").style.display= "none"
 });
   
 
@@ -318,15 +313,5 @@ document.getElementById("myform").addEventListener("submit", function () {
 
 
 
-// Sélectionnez le bouton ou le formulaire que vous souhaitez écouter
-//var button = document.getElementById("myButton");
 
-// Ajoutez un événement de clic sur le bouton ou le formulaire
-//button.addEventListener("click", function(event) {
-  //event.preventDefault(); // Empêche la page de recharger lors de la soumission du formulaire
-  //if (isRadioButtonSelected()) {
-   // console.log("Un bouton radio est sélectionné.");
-  //} else {
-    //console.log("Aucun bouton radio n'est sélectionné.");
- // }
-//});
+
