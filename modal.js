@@ -28,7 +28,7 @@ function editNav() {
   } else {
     x.className = "topnav";
   }
-}
+};
 
 
 // Fonction pour lancer la modale
@@ -40,7 +40,7 @@ function launchModal() {
 //fonction pour fermer la modale
 function closeModal() {
   modalbg.style.display = "none";
-}
+};
 
 //je rentre les informations pour vérifier si c'est un prénom valide a l'aide de la fonction validateFirstNameInput
 
@@ -48,7 +48,7 @@ function validateFirstNameInput(firstname) {
   console.log("validate first name", firstname.length);
     //le prénom doit obligatoirement au moins deux caractères
     // dans le prénom doivent apparaitre que des lettre en minuscules ou majuscules et -
-  if (firstname.length < 3 || !/^[a-zA-Z-]+$/.test(firstname))  {
+  if (firstname.length < 2 || !/^[a-zA-Z-]+$/.test(firstname))  {
     console.log("entrer un prénom valide");
 
     //Si ce n'est pas le cas faire apparaitre le messge d'erreur
@@ -61,7 +61,7 @@ function validateFirstNameInput(firstname) {
     document.getElementById("first").style.color = "red ";
   // si les conditions du dessus ne sont pas remplies alors
 
-  } else if (firstname.length > 2) {
+  } else if (firstname.length >1) {
     // le message d'erreur n'apparait plus
     document.getElementById("small_text").style.display = "none";
     // la bordure apparait de couleur verte
@@ -79,7 +79,7 @@ function validateFirstNameInput(firstname) {
 function validateLastNameInput(lastname) {
   console.log('validate lastname', lastname.length);
     // si le nom ne contient pas plus de 2 lettre alors le champ ne sera pas validé
-  if (lastname.length < 3 || !/^[a-zA-Z]+$/.test(lastname)) {
+  if (lastname.length < 2 || !/^[a-zA-Z]+$/.test(lastname)) {
     console.log("le nom n'est pas valide");
     // je fais apparaitre un message d'erreur
     document.getElementById("small_nom").style.display = "block";
@@ -266,9 +266,7 @@ partiBtn.addEventListener('click', function (event) {
 
 });
 
-
 //boutons radio
-
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textLocation = location.value;
@@ -278,29 +276,11 @@ partiBtn.addEventListener('click', function (event) {
 
 // fermer le formulaire
 
+document.getElementById("myform").addEventListener("submit", function () {
+  alert("message envoyé")
+});
+  
 
-myform.addEventListener('submit', e => {
-  e.preventDefault();
-  form_verify();
-})
-
-
-//function myformVerify
-
-function form_verify() {
-  // les valeurs des inputs
-  var textPrenom = prenom.value;
-  var textNom = nom.value;
-  var textemail = email.value;
-  var texttounoi = quantity.value;
-  var textDate = birthdate.value;
-  var textValidation = checkbox1.value;
-  var textLocation = location.value;
-// verification prenom
-  if (textPrenom === "") {
-    
-  }
-};
 
 
 
