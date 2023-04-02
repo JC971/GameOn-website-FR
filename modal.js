@@ -60,6 +60,7 @@ function validateFirstNameInput(firstname) {
     // le texte est lui aussi en rouge
     document.getElementById("first").style.color = "red ";
   // si les conditions du dessus ne sont pas remplies alors
+    return false;
 
   } else if (firstname.length >1) {
     // le message d'erreur n'apparait plus
@@ -89,7 +90,9 @@ function validateLastNameInput(lastname) {
     document.getElementById("first").style.color = "red ";
     // si le nom contient plus de deux lettres alors
     // supprimer le message incitatif 
-    document.querySelector('.email-vide')
+    //document.querySelector('.email-vide')
+  
+    return false;
 
   } else {
     console.log('le nom est valide')
@@ -101,7 +104,7 @@ function validateLastNameInput(lastname) {
     document.getElementById("last").style.color = "white ";
      // la couleur de fond passe en vert
      document.getElementById("last").style.backgroundColor = "green";
-   
+    return true;
   }
 };
 
@@ -126,7 +129,7 @@ function validateEmailInput(email) {
     
   // l'email n'est pas vide donc ce message d'erreur n'apparait plus
     document.querySelector('.email-vide').style.display = 'none';
-
+    return true;
 
   } else {
     console.log("invalid email address");
@@ -167,6 +170,8 @@ function validDate(dateString) {
     // La couleur de fond apparaît en vert
     document.getElementById('birthdate').style.backgroundColor = "green";
 
+    
+
     if (!dateString) {
       console.log('pas de données ');
       // l'affichage d'un message d'erreur apparait quand aucune date n'est saisie
@@ -186,7 +191,9 @@ function validDate(dateString) {
         // la bordure apparait en vert avec une bordure de 3px
         document.getElementById('birthdate').style.border = "lightGreen 3px solid";
         // la couleur de fond apparait en vert
-        document.getElementById('birthdate').style.backgroundColor = "green";
+      document.getElementById('birthdate').style.backgroundColor = "green";
+
+      
       }
     }
   }
@@ -223,8 +230,10 @@ function isRadioButtonSelected() {
   var radioButtons = document.getElementsByName('location');
   for (var i = 0; i < radioButtons.length; i++) {
     if (radioButtons[i].checked) {
-      console.log('vous avez bien choisi une ville');
+      valeur = radioButtons[i].value;
+      console.log(valeur);
       document.querySelector('.choix-ville').style.display = "none";
+      
       return true;
       
     } else {
@@ -235,6 +244,10 @@ function isRadioButtonSelected() {
   }
   
 };
+//-----------------------------------
+
+
+
 
 // les  conditions d'utilisation
 function validate() {
@@ -257,6 +270,51 @@ modaleBtn.addEventListener("click", launchModal);
 //fermeture de la modale 
 closeModale.addEventListener('click', closeModal);
 
+// fonction de vérification globale du formulaire
+function isValidForm() {
+
+  var textPrenom = prenom.value;
+  const r1 = validateFirstNameInput(textPrenom);
+  
+  var textNom = nom.value;
+  const r2 = validateLastNameInput(textNom);
+ 
+  var textemail = email.value;
+  const r3 = validateEmailInput(textemail);
+
+  var textDate = birthdate.value;
+  const r4 = validDate(textDate);
+
+  var texttounoi = quantity.value;
+  const r5 = validateTournois(texttounoi);
+
+  var textLocation = location.value;
+  const r6 = isRadioButtonSelected(textLocation);
+
+  var textValidation = checkbox1.value;
+  const r7 = validate(textValidation);
+
+  
+  return r1 && r2 && r3 && r4 && r5 && r7;
+
+}
+
+// bouton parti pour envoyer le formulaire
+
+partiBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  if (isValidForm()) {
+    //faire disparaitre le formulaire et apparaitre la popup 
+    alert('form is valid !')
+  } else {
+    alert('form is not valid')
+  }
+});
+
+
+
+
+/*
 // parti prénom
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
@@ -289,7 +347,7 @@ partiBtn.addEventListener('click', function (event) {
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textValidation = checkbox1.value;
-  validate(textValidation)
+  validate(textValidation);
 
 });
 
@@ -297,7 +355,7 @@ partiBtn.addEventListener('click', function (event) {
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   var textLocation = location.value;
-  isRadioButtonSelected(textLocation)
+  isRadioButtonSelected(textLocation);
 });
 
 
@@ -306,7 +364,7 @@ partiBtn.addEventListener('click', function (event) {
 myform.addEventListener("submit", function () {
   alert("okdk")
   document.getElementById("modal-btn").style.display= "none"
-});
+});*/
   
 
 
