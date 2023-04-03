@@ -9,15 +9,15 @@ const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
-//const fillMail = document.querySelector('.email-vide');
+
 const naissance = document.getElementById('birthdate');
 const date = document.querySelector(".no-date");
 const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
-const ville = document.querySelector('.ville-choix');
-
-
+const villeChoix = document.querySelector('.ville-choix');
+const message = document.querySelector(".message");
+const ville = document.querySelector('input[name="location"]:checked');
 const maxDate = new Date();
 
 
@@ -51,7 +51,7 @@ function validateFirstNameInput(firstname) {
   if (firstname.length < 2 || !/^[a-zA-Z-]+$/.test(firstname))  {
     console.log("entrer un prénom valide");
 
-    //Si ce n'est pas le cas faire apparaitre le messge d'erreur
+    //si le prénom contient moins de 2 mettres
     document.getElementById("small_text").style.display = "block";
 
     // pour souligner l'erreur je mets les bordures en rouge
@@ -60,17 +60,15 @@ function validateFirstNameInput(firstname) {
     // le texte est lui aussi en rouge
     document.getElementById("first").style.color = "red ";
   // si les conditions du dessus ne sont pas remplies alors
-    return false;
+   
 
   } else if (firstname.length >1) {
     // le message d'erreur n'apparait plus
     document.getElementById("small_text").style.display = "none";
     // la bordure apparait de couleur verte
-    document.getElementById("first").style.border = "lightGreen 3px solid";
-    //l'écriture passe en blanc
-    document.getElementById("first").style.color = "white ";
-    // la couleur de fond passe en vert
-    document.getElementById("first").style.backgroundColor = "green "; 
+    document.getElementById("first").style.border = "green 5px solid";
+    document.getElementById("first").style.color = "green ";
+
     return true;
   }
 };
@@ -92,18 +90,15 @@ function validateLastNameInput(lastname) {
     // supprimer le message incitatif 
     //document.querySelector('.email-vide')
   
-    return false;
 
   } else {
     console.log('le nom est valide')
     //le message d'erreur disparait 
     document.getElementById("small_nom").style.display = "none";
-    //les bordures sont de couleur blanche
-    document.getElementById("last").style.border = "lightGreen 3px solid";
-    // les lettres sont vertes aussi
-    document.getElementById("last").style.color = "white ";
-     // la couleur de fond passe en vert
-     document.getElementById("last").style.backgroundColor = "green";
+    //les bordures sont de couleur verte
+    document.getElementById("last").style.border = "green 5px solid";
+    document.getElementById("last").style.color = "green";
+
     return true;
   }
 };
@@ -117,12 +112,10 @@ function validateEmailInput(email) {
   
   if (pattern.test(email)) {
     console.log("valid email address");
-    // la couleur des écritures est blanche
-    document.getElementById("email").style.color = "white";
+    
     // bordure du bouton verte
-    document.getElementById("email").style.border = "lightGreen 3px solid";
-    //la couleur de fond en vert
-    document.getElementById('email').style.backgroundColor = 'green';
+    document.getElementById("email").style.border = "green 5px solid";
+    document.getElementById("email").style.color = "green";
 
     // pas de message d'erreur car le mail est correct
     document.getElementById("error-email").style.display = "none";
@@ -160,17 +153,19 @@ function validDate(dateString) {
     document.getElementById('birthdate').style.border = 'red 3px solid';
     //la couleur d'écriture en rouge 
     document.getElementById("birthdate").style.color = "red";
+
   } else {
+
     // Masquer le message d'erreur si l'âge est égal ou supérieur à 18 ans
     document.querySelector('.no-date').style.display = 'none'
-    // La couleur de fond apparaît en blanc
-    document.getElementById("birthdate").style.color = "white";
-    // La bordure apparaît en vert avec une bordure de 3px
-    document.getElementById('birthdate').style.border = "lightGreen 3px solid";
-    // La couleur de fond apparaît en vert
-    document.getElementById('birthdate').style.backgroundColor = "green";
-
+    // La couleur de fond apparaît en noir
+    document.getElementById("birthdate").style.color = "green";
+    document.getElementById("birthdate").style.border="green 5px solid"
     
+    
+    return true;
+
+  }
 
     if (!dateString) {
       console.log('pas de données ');
@@ -181,7 +176,7 @@ function validDate(dateString) {
       document.getElementById('birthdate').style.backgroundColor = "white";
       // l'écriture de fond de la date reste le noir
       document.getElementById('birthdate').style.color = "black";
-      document.getElementById('birthdate').style.border = "red 3px solid";
+      document.getElementById('birthdate').style.border = "green 5px solid";
 
       } else {
         // le message d'erreur n'est plus utile
@@ -189,15 +184,14 @@ function validDate(dateString) {
         // la couleur de fond apparait en blanc
         document.getElementById("birthdate").style.color = "white";
         // la bordure apparait en vert avec une bordure de 3px
-        document.getElementById('birthdate').style.border = "lightGreen 3px solid";
+        document.getElementById('birthdate').style.border = "green 5px solid";
         // la couleur de fond apparait en vert
       document.getElementById('birthdate').style.backgroundColor = "green";
-
+      return true;
       
       }
     }
-  }
-
+  
 
 // nombre de tournois 
 var numberInput = document.getElementById("quantity");
@@ -214,18 +208,16 @@ function validateTournois(param) {
 
   } else {
     //quand le nombre entré est correct les bordures sont vertes
-    document.getElementById('quantity').style.border = "lightGreen 3px solid";
-    document.getElementById("quantity").style.backgroundColor = "green";
-    document.getElementById("quantity").style.color = "white";
+    document.getElementById('quantity').style.border = "green 5px solid";
+    
     // on cache le message d'erreur
     document.getElementById("nombre-invalide").style.display = "none";
+    return true;
     }
 
 };
-  //
 
 // Parcours de tous les boutons radio
-
 function isRadioButtonSelected() {
   var radioButtons = document.getElementsByName('location');
   for (var i = 0; i < radioButtons.length; i++) {
@@ -246,9 +238,6 @@ function isRadioButtonSelected() {
 };
 //-----------------------------------
 
-
-
-
 // les  conditions d'utilisation
 function validate() {
     // si la case n'est pas cochée
@@ -257,9 +246,10 @@ function validate() {
     alert("Acceptez les conditions d'utilisation avant de valider.");
     console.log('c pas bon du toutu');
    
-  }
+  }else{ 
   // si la case est cochée la fonction renvoie true le formulaire est soumi
-  return true;
+    return true;
+  }
 };
 
 // Lancement de la modale on recupere le bouton de l'id je m'inscris pour pouvoir l'ouvrir
@@ -270,7 +260,10 @@ modaleBtn.addEventListener("click", launchModal);
 //fermeture de la modale 
 closeModale.addEventListener('click', closeModal);
 
+
+
 // fonction de vérification globale du formulaire
+
 function isValidForm() {
 
   var textPrenom = prenom.value;
@@ -304,10 +297,15 @@ function isValidForm() {
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   if (isValidForm()) {
-    //faire disparaitre le formulaire et apparaitre la popup 
+    //faire disparaitre le formulaire et apparaitre la popup
+    //document.getElementById('closeModalBtn').style.display = "none";
+    document.getElementById('myform').style.display = 'none';
+    message.style.display = 'block';
+
+
     alert('form is valid !')
   } else {
-    alert('form is not valid')
+    
   }
 });
 
