@@ -9,7 +9,7 @@ const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
-
+//const fermerBtn = document.getElementById('close-confirm');
 const naissance = document.getElementById('birthdate');
 const date = document.querySelector(".no-date");
 const myform = document.getElementById("myform");
@@ -19,6 +19,9 @@ const villeChoix = document.querySelector('.ville-choix');
 const message = document.querySelector(".message");
 const ville = document.querySelector('input[name="location"]:checked');
 const maxDate = new Date();
+const btnCloseConfirm = document.getElementById("close-confirm");
+
+
 
 
 function editNav() {
@@ -120,7 +123,7 @@ function validateEmailInput(email) {
     // pas de message d'erreur car le mail est correct
     document.getElementById("error-email").style.display = "none";
     
-  // l'email n'est pas vide donc ce message d'erreur n'apparait plus
+  // l'email n'est pas laissé vide donc ce message d'erreur n'apparait plus
     document.querySelector('.email-vide').style.display = 'none';
     return true;
 
@@ -145,7 +148,7 @@ function validDate(dateString) {
   var age = (new Date().getTime() - new Date(dateString).getTime()) / (1000 * 60 * 60 * 24 * 365);
 
   // je vérifie si l'âge est égal ou supérieur à 18 ans
-  if (age < 18) {
+  if (age < 18 || !dateString) {
     // Afficher un message d'erreur si l'âge est inférieur à 18 ans
     // je me sers de ma balise no-date pour faire apparaitre un message ...
     document.querySelector('.no-date').innerHTML = 'Vous devez avoir 18 ans ou plus';
@@ -160,37 +163,14 @@ function validDate(dateString) {
     document.querySelector('.no-date').style.display = 'none'
     // La couleur de fond apparaît en noir
     document.getElementById("birthdate").style.color = "green";
-    document.getElementById("birthdate").style.border="green 5px solid"
+    document.getElementById("birthdate").style.border = "green 5px solid"
     
     
     return true;
 
+
   }
-
-    if (!dateString) {
-      console.log('pas de données ');
-      // l'affichage d'un message d'erreur apparait quand aucune date n'est saisie
-      document.querySelector(".no-date").style.display = "block";
-      // le message d'erreur s'écrit en rouge
-      document.getElementById('birthdate').style.color = "red";
-      document.getElementById('birthdate').style.backgroundColor = "white";
-      // l'écriture de fond de la date reste le noir
-      document.getElementById('birthdate').style.color = "black";
-      document.getElementById('birthdate').style.border = "green 5px solid";
-
-      } else {
-        // le message d'erreur n'est plus utile
-        document.querySelector('.no-date').style.display = 'none'
-        // la couleur de fond apparait en blanc
-        document.getElementById("birthdate").style.color = "white";
-        // la bordure apparait en vert avec une bordure de 3px
-        document.getElementById('birthdate').style.border = "green 5px solid";
-        // la couleur de fond apparait en vert
-      document.getElementById('birthdate').style.backgroundColor = "green";
-      return true;
-      
-      }
-    }
+};
   
 
 // nombre de tournois 
@@ -209,7 +189,7 @@ function validateTournois(param) {
   } else {
     //quand le nombre entré est correct les bordures sont vertes
     document.getElementById('quantity').style.border = "green 5px solid";
-    
+    document.getElementById('quantity').style.color = "green";
     // on cache le message d'erreur
     document.getElementById("nombre-invalide").style.display = "none";
     return true;
@@ -294,21 +274,31 @@ function isValidForm() {
 
 // bouton parti pour envoyer le formulaire
 
+
+
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   if (isValidForm()) {
     //faire disparaitre le formulaire et apparaitre la popup
     //document.getElementById('closeModalBtn').style.display = "none";
     document.getElementById('myform').style.display = 'none';
+    
     message.style.display = 'block';
+    document.querySelector("#close-confirm").style.display="block"
 
 
-    alert('form is valid !')
   } else {
     
   }
 });
 
+
+btnCloseConfirm.addEventListener('click', function() {
+  //btnCloseConfirm.style.display = "none";
+  modalbg.style.display = 'none';
+ 
+});
+  
 
 
 
