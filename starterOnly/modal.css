@@ -67,6 +67,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+    color: red;
   }
 }
 @media screen and (max-width: 768px) {
@@ -100,8 +101,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -167,7 +166,7 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
-  height: 700px;
+  
  
 }
 label {
@@ -531,7 +530,8 @@ footer {
 /*-----------------------*/
 
 .d-none{
-  display: block;
+	display: flex;
+
 }
 
 #small_text{
@@ -554,11 +554,9 @@ footer {
 
 .button.btn-submit.close-confirm{
   display: none;
+  margin-top: 150px;
 }
-.message{
-  display: none;
-  padding: 20px;
-}
+
 
 #nombre-invalide{
   display: none;
@@ -589,7 +587,31 @@ footer {
   display: none;
 }
 
-#close-confirm{
+
+.cadre{
+
+  height: 700px;
+ 
+  }
 
 
+
+.message{
+ display: none;
+ padding-top: 400px;
+ mt50px
+
+  
+}
+.button.button-submit.close-confirm{
+  display: block;
+}
+
+.confirm-modal.d-none{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: stretch;
+	align-content: stretch;
 }

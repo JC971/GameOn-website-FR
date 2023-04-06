@@ -275,6 +275,7 @@ partiBtn.addEventListener('click', function (event) {
     //faire disparaitre le formulaire et apparaitre la popup
     document.getElementById('myform').style.display = 'none';
     
+    
     message.style.display = 'block';
     document.querySelector("#close-confirm").style.display = "block";
 
