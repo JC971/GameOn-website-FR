@@ -163,9 +163,11 @@ main {
   color: #fff;
   padding-top: 10px;
 }
+/*----changement hauteur modale--*/
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  height: 700px;
  
 }
 label {
@@ -471,8 +473,6 @@ footer {
     background: #fff;
     color: #000;
     padding: 20px;
-   
-    
   }
   .hero-content::after {
     content: unset;
@@ -507,13 +507,12 @@ footer {
     
   }
  
-
 #secondInscritBtn{
   display: none;
-  
 }
   
 }
+
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -533,7 +532,6 @@ footer {
 
 .d-none{
   display: block;
-
 }
 
 #small_text{
@@ -559,6 +557,7 @@ footer {
 }
 .message{
   display: none;
+  padding: 20px;
 }
 
 #nombre-invalide{
@@ -588,4 +587,9 @@ footer {
   color: red;
   font-size: 16px;
   display: none;
+}
+
+#close-confirm{
+
+
 }

@@ -139,15 +139,13 @@ function validateEmailInput(email) {
   }
 };
 
-
 //function validation de la date
-
 function validDate(dateString) {
   // si les données ne sont pas conforment à la chaine de caractère date alors
   // Calculer l'âge à partir de la date de naissance
   var age = (new Date().getTime() - new Date(dateString).getTime()) / (1000 * 60 * 60 * 24 * 365);
 
-  // je vérifie si l'âge est égal ou supérieur à 18 ans
+  // je vérifie si l'âge est égal ou supérieur à 18 ans ou que l'age n'est pas renseigné
   if (age < 18 || !dateString) {
     // Afficher un message d'erreur si l'âge est inférieur à 18 ans
     // je me sers de ma balise no-date pour faire apparaitre un message ...
@@ -172,7 +170,6 @@ function validDate(dateString) {
   }
 };
   
-
 // nombre de tournois 
 var numberInput = document.getElementById("quantity");
 function validateTournois(param) {
@@ -241,7 +238,6 @@ modaleBtn.addEventListener("click", launchModal);
 closeModale.addEventListener('click', closeModal);
 
 
-
 // fonction de vérification globale du formulaire
 
 function isValidForm() {
@@ -267,92 +263,31 @@ function isValidForm() {
   var textValidation = checkbox1.value;
   const r7 = validate(textValidation);
 
-  
   return r1 && r2 && r3 && r4 && r5 && r7;
 
 }
 
 // bouton parti pour envoyer le formulaire
 
-
-
 partiBtn.addEventListener('click', function (event) {
   event.preventDefault();
   if (isValidForm()) {
     //faire disparaitre le formulaire et apparaitre la popup
-    //document.getElementById('closeModalBtn').style.display = "none";
     document.getElementById('myform').style.display = 'none';
     
     message.style.display = 'block';
-    document.querySelector("#close-confirm").style.display="block"
-
+    document.querySelector("#close-confirm").style.display = "block";
 
   } else {
     
   }
 });
 
-
 btnCloseConfirm.addEventListener('click', function() {
-  //btnCloseConfirm.style.display = "none";
+  // au click sur le bouton la modale n'apparait plus
   modalbg.style.display = 'none';
  
 });
-  
-
-
-
-/*
-// parti prénom
-partiBtn.addEventListener('click', function (event) {
-  event.preventDefault();
-  var textPrenom = prenom.value;
-  console.log("le prénom est", textPrenom);
-  validateFirstNameInput(textPrenom);
-  //nom de famille
-  var textNom = nom.value;
-  console.log('nom', textNom);
-  validateLastNameInput(textNom);
-//e-mail
-  var textemail = email.value;
-  console.log('la valeur pour mail', textemail);
-  validateEmailInput(textemail);
-// nombre de tournois
-  var texttounoi = quantity.value;
-  console.log('le nombre de tournois', texttounoi);
-  validateTournois(texttounoi);
-
-});
-// date anniversaire
-partiBtn.addEventListener('click', function (event) {
-  event.preventDefault();
-  var textDate = birthdate.value;
-  console.log("la date d'anniversaire", textDate);
-  validDate(textDate);
-});
-
-// 
-partiBtn.addEventListener('click', function (event) {
-  event.preventDefault();
-  var textValidation = checkbox1.value;
-  validate(textValidation);
-
-});
-
-//boutons radio
-partiBtn.addEventListener('click', function (event) {
-  event.preventDefault();
-  var textLocation = location.value;
-  isRadioButtonSelected(textLocation);
-});
-
-
-// fermer le formulaire
-
-myform.addEventListener("submit", function () {
-  alert("okdk")
-  document.getElementById("modal-btn").style.display= "none"
-});*/
   
 
 
