@@ -229,9 +229,6 @@ myform.addEventListener('click', function (e) {
     }
 });
 
-
-
-
 //-----------------------------------
 
 // les  conditions d'utilisation
