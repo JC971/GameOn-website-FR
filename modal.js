@@ -15,6 +15,7 @@ const date = document.querySelector(".no-date");
 const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
+
 const villeChoix = document.querySelector('.ville-choix');
 const message = document.querySelector(".message");
 const ville = document.querySelector('input[name="location"]:checked');
@@ -163,9 +164,7 @@ function validDate(dateString) {
     document.getElementById("birthdate").style.color = "green";
     document.getElementById("birthdate").style.border = "green 5px solid"
     
-    
     return true;
-
 
   }
 };
@@ -211,7 +210,6 @@ function isRadioButtonSelected() {
       
     }
   }
-  
 };
 //-----------------------------------
 
@@ -220,7 +218,8 @@ function validate() {
     // si la case n'est pas cochée
   if (!document.getElementById("checkbox1").checked) {
     // une alerte est envoyée et bloque la soumission
-    alert("Acceptez les conditions d'utilisation avant de valider.");
+    
+    //alert("Acceptez les conditions d'utilisation avant de valider.");
     console.log('c pas bon du toutu');
    
   }else{ 
