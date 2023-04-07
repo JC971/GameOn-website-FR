@@ -564,7 +564,7 @@ footer {
   color: red;
 }
 
-.conditions{
+.accept{
   display: none;
   font-size: 18px;
   color: red;
@@ -599,8 +599,8 @@ footer {
  padding-top: 400px;
  mt50px
 
-  
 }
+
 .button.button-submit.close-confirm{
   display: block;
 }

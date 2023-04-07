@@ -15,7 +15,7 @@ const date = document.querySelector(".no-date");
 const myform = document.getElementById("myform");
 const nbreTournoi = document.getElementById("quantity");
 const condition = document.getElementById('checkbox1');
-
+const accepte = document.querySelector('accept');
 const villeChoix = document.querySelector('.ville-choix');
 const message = document.querySelector(".message");
 const ville = document.querySelector('input[name="location"]:checked');
@@ -218,9 +218,10 @@ function validate() {
     // si la case n'est pas cochée
   if (!document.getElementById("checkbox1").checked) {
     // une alerte est envoyée et bloque la soumission
+    document.querySelector('.accept').style.display = 'block';
+    document.querySelector('.accept-conditions').style.display = 'none';
     
-    //alert("Acceptez les conditions d'utilisation avant de valider.");
-    console.log('c pas bon du toutu');
+    console.log('conditions non validées');
    
   }else{ 
   // si la case est cochée la fonction renvoie true le formulaire est soumi
