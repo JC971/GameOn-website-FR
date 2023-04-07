@@ -193,7 +193,9 @@ function validateTournois(param) {
 
 };
 
+
 // Parcours de tous les boutons radio
+/*
 function isRadioButtonSelected() {
   var radioButtons = document.getElementsByName('location');
   for (var i = 0; i < radioButtons.length; i++) {
@@ -210,7 +212,24 @@ function isRadioButtonSelected() {
       
     }
   }
-};
+}; */
+//----------------------------
+
+
+let citySelected = false;
+
+
+myform.addEventListener('click', function (e) {
+    if (e.target.type == 'radio') {
+        console.log('radio touché')
+        citySelected = true
+    }
+});
+
+
+
+
+
 //-----------------------------------
 
 // les  conditions d'utilisation
@@ -256,14 +275,18 @@ function isValidForm() {
 
   var texttounoi = quantity.value;
   const r5 = validateTournois(texttounoi);
-
+/*
   var textLocation = location.value;
   const r6 = isRadioButtonSelected(textLocation);
-
+*/
+  
+  
+  
+  
   var textValidation = checkbox1.value;
   const r7 = validate(textValidation);
 
-  return r1 && r2 && r3 && r4 && r5 && r7;
+  return r1 && r2 && r3 && r4 && r5 && r7 && citySelected;
 
 }
 
