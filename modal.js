@@ -221,11 +221,13 @@ let citySelected = false;
 
 myform.addEventListener('click', function (e) {
     if (e.target.type == 'radio') {
-        console.log('radio touché')
+      console.log('radio touché')
+      document.querySelector('.choix-ville').style.display = "none";
         citySelected = true
+    } else {
+      document.querySelector('.choix-ville').style.display = "block";
     }
 });
-
 
 
 
@@ -279,8 +281,6 @@ function isValidForm() {
   var textLocation = location.value;
   const r6 = isRadioButtonSelected(textLocation);
 */
-  
-  
   
   
   var textValidation = checkbox1.value;
