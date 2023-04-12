@@ -39,25 +39,18 @@
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
           aux réservations... Places limitées !
         </p>
+        <!-- insertition d'un nouveau bouton iscription pour lles écrans supérieurs à 800 px-->
         <button id="secondInscritBtn" class="btn-signup modal-btn">
           je m'inscris
-        
         </button>
-        
       </div>
-      
       <div class="hero-img">
         <img src="./starterOnly/bg_img.jpg" alt="img" />
       </div>
-      
       <button id="inscritBtn" class="btn-signup modal-btn">
         je m'inscris
-      
       </button>
-   
-      
     </div>
-
     <div class="bground">
       <div class="content">
         <span id="closeModale" class="close"></span>
@@ -79,14 +72,15 @@
             <div class="formData">
               <label for="email">E-mail</label><br>
               <input class="text-control" type="email" required id="email" name="email" /><br>
-              <!-- erreur               -->
+              <!--    message d'erreur quand le mail n'a pas été renseigné               -->
               <div class="email-vide">Entrez une adresse mail valide</div>
               <div class="error-email" id="error-email">L'adresse mail n'est pas valide</div>
-              <!--fin email           -->
+              <!--      fin email           -->
             </div>
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" required="required" id="birthdate" name="birthdate" /><br>
+              <!--   message d'erreur quand le champ date n'a pas été renseigné   -->
               <div class="no-date">Entrez votre date de naissance</div>
               <div class="right-date"></div>
             </div>
