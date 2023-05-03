@@ -32,6 +32,10 @@ function editNav() {
   } else {
     x.className = "topnav";
   }
+
+ 
+  
+  
 };
 
 
@@ -55,7 +59,7 @@ function validateFirstNameInput(firstname) {
     //le prénom doit obligatoirement au moins deux caractères
     // dans le prénom doivent apparaitre que des lettre en minuscules ou majuscules et - et les accents
   if (firstname.length < 2 || !/^[a-zA-ZÀ-ú-]+$/.test(firstname))  {
-    console.log("entrer un prénom valide");
+   
   //Si le prénom contient moins de 2 caractères ou que les caractères ne correspondent pas à l'expression régulière
     document.getElementById("small_text").style.display = "block";
     // pour souligner l'erreur je mets les bordures en rouge
@@ -172,7 +176,7 @@ function validDate(dateString) {
   }
 };
 
-// ------------------------tournois---participations-----------------------------------
+// ------------------------tournois--------------------------------------
   
 // nombre de tournois 
 var numberInput = document.getElementById("quantity");
