@@ -67,11 +67,15 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;}
   .topnav a.icon {
     float: right;
     display: block;
     color: red;
+  }
+  .main-navbar{
+    height: 150px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -93,7 +97,7 @@ img {
   right: 0px;
   top: 50px;
   padding: 0;
-  text-align:right;
+ font-size: 1em;
 }
  
 a.icon{
@@ -104,8 +108,7 @@ a.icon{
 
 }
 
-
-/*-------------------*/
+/*----------540--------------------------*/
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -113,8 +116,9 @@ a.icon{
     display: block;
     margin-top: -15px;
   }
-} 
 
+  
+};
 
 main {
   font-size: 130%;
@@ -446,6 +450,7 @@ input[data-error]::after {
   font-size: 6rem;
   font-weight: normal;
   white-space: nowrap;
+  margin-top:40px
 }
 .hero-text {
   width: 146%;
@@ -491,11 +496,23 @@ footer {
 }
 
 /*------------------*/
+
+@media screen and (max-width: 1900px){
+
+  .hero-text{
+    font-size: 1.2rem;
+  }
+}
+
+
 @media screen and (max-width: 1400px){
 
   .hero-img img{
     object-fit: cover;
   
+  }
+  .hero-text{
+    font-size: 1.4rem;
   }
   
   .hero-headline{
@@ -666,4 +683,6 @@ footer {
 	align-items: stretch;
 	align-content: stretch;
 }
-
+.essai{
+  margin-top: 60px;
+}

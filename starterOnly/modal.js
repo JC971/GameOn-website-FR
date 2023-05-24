@@ -9,7 +9,6 @@ const closeModale = document.querySelector("#closeModale");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 const email = document.getElementById("email");
-//const fermerBtn = document.getElementById('close-confirm');
 const naissance = document.getElementById('birthdate');
 const date = document.querySelector(".no-date");
 const myform = document.getElementById("myform");
@@ -26,7 +25,7 @@ const btnCloseConfirm = document.getElementById("close-confirm");
 
 
 function editNav() {
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
@@ -85,10 +84,10 @@ function validateFirstNameInput(firstname) {
 //je crée une fonction validateLastNameInput qui me sert à vérifier si le nom entré est valide
 
 function validateLastNameInput(lastname) {
-  console.log('validate lastname', lastname.length);
+  
     // si le nom ne contient pas plus de 2 lettre ou que les caractères sont différents du regex alors le champ ne sera pas validé
   if (lastname.length < 2 || !/^[a-zA-ZÀ-ú-]+$/.test(lastname)) {
-    console.log("le nom n'est pas valide");
+   
     // je fais apparaitre un message d'erreur
     document.getElementById("small_nom").style.display = "block";
     // la bordure sera de couleur rouge
@@ -97,7 +96,7 @@ function validateLastNameInput(lastname) {
     document.getElementById("first").style.color = "red ";
     
   } else {
-    console.log('le nom est valide')
+    
     //le message d'erreur disparait 
     document.getElementById("small_nom").style.display = "none";
     //les bordures sont de couleur verte
@@ -114,11 +113,11 @@ function validateLastNameInput(lastname) {
 
 function validateEmailInput(email) {
     // regular expression pour les lettres de a à z en minuscules et majuscules plus -
-  var pattern =  /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+  let pattern =  /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     
   if (pattern.test(email)) {
 // si les valeurs testées dans la pattern correspondent alors
-    console.log("valid email address");
+    
     // bordure du bouton verte
     document.getElementById("email").style.border = "green 5px solid";
     //le texte sera écrit en vert
@@ -132,7 +131,7 @@ function validateEmailInput(email) {
 
   } else {
     //dans le cas contraire 
-    console.log("invalid email address");
+    
     //le texte sera affiché en rouge
     document.getElementById("email").style.color = "red";
     // message d'erreur apparait 
@@ -149,7 +148,7 @@ function validateEmailInput(email) {
 //function validation de la date
 function validDate(dateString) {
   // Calculer l'âge à partir de la date de naissance
-  var age = (new Date().getTime() - new Date(dateString).getTime()) / (1000 * 60 * 60 * 24 * 365);
+  let age = (new Date().getTime() - new Date(dateString).getTime()) / (1000 * 60 * 60 * 24 * 365);
 
   // je vérifie si l'âge est égal ou supérieur à 18 ans ou que l'age n'est pas renseigné
   if (age < 18 || !dateString) {
@@ -178,31 +177,34 @@ function validDate(dateString) {
 
 // ------------------------tournois--------------------------------------
   
-// nombre de tournois 
-var numberInput = document.getElementById("quantity");
+// nombre de tournois
+
+let numberInput = document.getElementById("quantity");
+
 function validateTournois(param) {
-  if (param === "" || param > 30) {
-    // si le nombre de tournoi n'est pas renseigné ou qu'il dépasse les 30 tournois alors
+  if (param === "" || param > 30 || param < 0) {
+    // Si le nombre de tournois n'est pas renseigné, dépasse les 30 tournois ou est négatif,
     // la bordure du champ quantity passe au rouge
     document.getElementById("quantity").style.borderColor = "red";
-    // erreur si nombre depasse les 30 la couleur d'écriture est en rouge
+    // La couleur d'écriture est en rouge
     document.getElementById("quantity").style.color = "red";
-    //j'affiche un message d'erreur nombre invalide
-    document.getElementById("nombre-invalide").style.display="block"
-    // la couleur de fond du bouton est blanche
-    document.getElementById("quantity").style.backgroundColor= "white";
-
+    // J'affiche un message d'erreur nombre invalide
+    document.getElementById("nombre-invalide").style.display = "block";
+    // La couleur de fond du bouton est blanche
+    document.getElementById("quantity").style.backgroundColor = "white";
+    return false;
   } else {
-    //quand le nombre entré est inférieur à 30 alors les bordures sont vertes
+    // Quand le nombre entré est valide (inférieur ou égal à 30 et positif),
+    // les bordures sont vertes
     document.getElementById('quantity').style.border = "green 5px solid";
-    //la couleur des caractères est verte
+    // La couleur des caractères est verte
     document.getElementById('quantity').style.color = "green";
-    // on cache le message d'erreur
+    // On cache le message d'erreur
     document.getElementById("nombre-invalide").style.display = "none";
     return true;
-    }
-
+  }
 };
+
 //-------------------------------- villes--------------------------------------
 
 // boutons radio
@@ -226,15 +228,12 @@ myform.addEventListener('click', function (e) {
 
 // les  conditions d'utilisation
 function validate() {
-    
   if (!document.getElementById("checkbox1").checked) {
 // si la case n'est pas cochée et que le bouton n'est pas vérifié
 // une alerte est envoyée demandant d'accepter les conditions et remplace l'incitation à accepter les conditions
     document.querySelector('.accept').style.display = 'block';
     document.querySelector('.accept-conditions').style.display = 'none';
     
-    console.log('conditions non validées');
-   
   }else{ 
   // si la case est cochée la fonction renvoie true le formulaire est soumi
     return true;
@@ -253,36 +252,31 @@ closeModale.addEventListener('click', closeModal);
 
 //---------------------véification de tous les champs-------------------
 
-// fonction de vérification globale du formulaire
+// version flèche
 
-function isValidForm() {
+const isValidForm=()=>{
 
-  var textPrenom = prenom.value;
+  let textPrenom = prenom.value;
   const r1 = validateFirstNameInput(textPrenom);
   
-  var textNom = nom.value;
+  let textNom = nom.value;
   const r2 = validateLastNameInput(textNom);
  
-  var textemail = email.value;
+  let textemail = email.value;
   const r3 = validateEmailInput(textemail);
 
-  var textDate = birthdate.value;
+  let textDate = birthdate.value;
   const r4 = validDate(textDate);
 
-  var texttounoi = quantity.value;
+  let texttounoi = quantity.value;
   const r5 = validateTournois(texttounoi);
-/*
-  var textLocation = location.value;
-  const r6 = isRadioButtonSelected(textLocation);
-*/
   
-  var textValidation = checkbox1.value;
+  let textValidation = checkbox1.value;
   const r7 = validate(textValidation);
 
   return r1 && r2 && r3 && r4 && r5 && r7 && citySelected;
 
 };
-
 
 
 //-------------- bouton parti pour envoyer le formulaire------------------------
@@ -302,13 +296,10 @@ partiBtn.addEventListener('click', function (event) {
 
 // ----------------------confirmation de l'envoie-----------------------
 
-btnCloseConfirm.addEventListener('click', function() {
-  // au click sur le bouton la modale n'apparait plus
+btnCloseConfirm.addEventListener('click', () => {
+  // Au clic sur le bouton, la modale n'apparaît plus
   modalbg.style.display = 'none';
- 
-});
-  
-
+  });
 
 
 
