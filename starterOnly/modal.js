@@ -1,4 +1,5 @@
-// DOM Elements
+// DOM Eleme#
+
 const modalbg = document.querySelector(".bground");
 const partiBtn = document.querySelector("#parti");
 const prenom = document.querySelector("#first");
@@ -20,6 +21,7 @@ const message = document.querySelector(".message");
 const ville = document.querySelector('input[name="location"]:checked');
 const maxDate = new Date();
 const btnCloseConfirm = document.getElementById("close-confirm");
+const elementsWithError = document.querySelectorAll('.formData[data-error-visible="true"] .text-control');
 
 
 
@@ -32,14 +34,40 @@ function editNav() {
     x.className = "topnav";
   }
 
- 
+};
 
-  
+// Fonction pour lancer la modale
+const launchModal = () => {
+  modalbg.style.display = 'block';
+};
+
+// Fonction pour fermer la modale
+const closeModal = () => {
+  modalbg.style.display = 'none';
 };
 
 
-// ---------------Fonction pour lancer la modale----------------
 
+function validateField(inputField, validationRegex, errorElement) {
+  const value = inputField.value.trim();
+  const isValid = validationRegex.test(value);
+
+  if (!isValid) {
+    errorElement.style.display = 'block';
+    inputField.style.border = 'solid 2px red';
+  } else {
+    errorElement.style.display = 'none';
+    inputField.style.border = 'solid 2px green';
+  }
+
+  return isValid;
+}
+
+
+
+
+// ---------------Fonction pour lancer la modale----------------
+/*
 function launchModal() {
   //on change le comportement de la modale qui etait en mode display none pour le passer en mode display block
   modalbg.style.display = "block";
@@ -106,7 +134,7 @@ function validateLastNameInput(lastname) {
     return true;
   }
 };
-
+*/
 // ---------------------e-mail------------------------------------------------
 
 //function validaEmailInput(email)

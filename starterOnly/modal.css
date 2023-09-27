@@ -3,12 +3,13 @@
   --font-slab: var(--font-default);
   --modal-duration: 0.8s;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-/* Landing Page */
+
 body {
   margin: 0;
   display: flex;
@@ -19,17 +20,21 @@ body {
   max-width: 1300px;
   margin: 0 auto;
 }
+
 p {
   margin-bottom: 0;
   padding: 0.5vw;
 }
+
 img {
   padding-right: 1rem;
 }
+
 .topnav {
   overflow: hidden;
   margin: 3.5%;
 }
+
 .header-logo {
     float: left;
 }
@@ -47,13 +52,16 @@ img {
   text-decoration: none;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+  
 
 }
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  
 }
+
 
 .topnav a.active {
   background-color: #ff0000;
@@ -108,7 +116,7 @@ a.icon{
 
 }
 
-/*----------540--------------------------*/
+/*----------540------
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -118,7 +126,7 @@ a.icon{
   }
 
   
-};
+};--------------------*/
 
 main {
   font-size: 130%;
@@ -497,44 +505,6 @@ footer {
 
 /*------------------*/
 
-@media screen and (max-width: 1900px){
-
-  .hero-text{
-    font-size: 1.2rem;
-  }
-}
-
-
-@media screen and (max-width: 1400px){
-
-  .hero-img img{
-    object-fit: cover;
-  
-  }
-  .hero-text{
-    font-size: 1.4rem;
-  }
-  
-  .hero-headline{
-    font-size: 3.5em;
-    }
-  
-  }
-
-
-@media screen and (max-width: 1024px){
-
-.hero-img img{
-  object-fit: cover;
-
-}
-
-.hero-headline{
-  font-size: 3em;
-  }
-
-}
-
 
 /*---------------------*/
 
@@ -652,7 +622,7 @@ footer {
 }
 
 .email-vide{
-  color: red;
+  
   font-size: 16px;
 }
 
