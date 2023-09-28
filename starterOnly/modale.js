@@ -1,3 +1,11 @@
+ function editNav() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   // Sélection des éléments du formulaire
@@ -22,17 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //const btnCloseConfirm = document.querySelector('#close-Confirm');
   const fermer = document.getElementById('close-confirm');
   
-  
-  function editNav() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    };
-    
-  }
+
+
   
   // Fonction pour lancer la modale
   const launchModal = () => {
