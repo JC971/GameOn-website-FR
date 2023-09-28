@@ -15,20 +15,19 @@
     <div class="header-logo">
       <img alt="logo" src="./starterOnly/Logo.png" width="auto" height="auto" />
     </div>
-    <div class="main-navbar">
+    <i class="icon"></i>
+    <div class="main-navbar" id="nav">
+      <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
       <a href="#"><span>Évènements passés</span></a>
       <a href="javascript:void(0);" class="icon" onclick="editNav()">
-        
-       <!--  <div>&#9776;</div> -->
-        <a href="#" class="active"><span>Accueil</span></a>
-        
-        
+        <i class="fa fa-bars "></i>
       </a>
-      <i class="fa fa-bars"></i> 
+
     </div>
+
   </div>
   </div>
   <main>
@@ -64,57 +63,60 @@
               <input class="text-control " type="text" required="required" id="first" name="first" /><br>
               <small id="small_text" class="small_text">Prénom non valide</small>
             </div>
-          
+
             <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" required="required" id="last" name="last" /><br>
               <small id="small_nom">Le nom n'est pas valide</small>
             </div>
-          
+
             <div class="formData">
               <label for="email">E-mail</label><br>
               <input class="text-control" type="email" required="required" id="email" name="email" /><br>
               <div class="email-vide">Entrez une adresse mail valide</div>
               <div class="error-email" id="error-email">L'adresse mail n'est pas valide</div>
             </div>
-          
+
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" required="required" id="birthdate" name="birthdate" /><br>
               <div class="no-date">Vous devez avoir 18 ans pour participer aux tournois</div>
               <div class="right-date"></div>
             </div>
-          
+
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" required="required" id="quantity" name="quantity" min="0" max="99">
+              <input type="number" class="text-control" required="required" id="quantity" name="quantity" min="0"
+                max="99">
               <div class="nombre-invalide" id="nombre-invalide">Entrer un nombre maximal de 30 tournois</div>
             </div>
-          
-            <p class="text-label">A quel tournoi souhaitez-vous participer cette année ? <abbr title="Une ville doit être sélectionnée"></abbr></p>
-          
+
+            <p class="text-label">A quel tournoi souhaitez-vous participer cette année ? <abbr
+                title="Une ville doit être sélectionnée"></abbr></p>
+
             <div class="formData">
-              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" required="required" />
+              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"
+                required="required" />
               <label class="checkbox-label" for="location1"><span class="checkbox-icon"></span> New York</label>
-          
+
               <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco" />
               <label class="checkbox-label" for="location2"><span class="checkbox-icon"></span> San Francisco</label>
-          
+
               <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle" />
               <label class="checkbox-label" for="location3"><span class="checkbox-icon"></span> Seattle</label>
-          
+
               <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago" />
               <label class="checkbox-label" for="location4"><span class="checkbox-icon"></span> Chicago</label>
-          
+
               <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston" />
               <label class="checkbox-label" for="location5"><span class="checkbox-icon"></span> Boston</label>
-          
+
               <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
               <label class="checkbox-label" for="location6"><span class="checkbox-icon"></span> Portland</label>
-          
+
               <div class="choix-ville">Indiquez la ville de votre choix</div>
             </div>
-          
+
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" name="checkbox1" required />
               <label class="checkbox2-label" for="checkbox1">
@@ -129,22 +131,22 @@
                 Je souhaite être prévenu des prochains évènements.
               </label>
             </div>
-          
+
             <div class="essai">
               <input class="btn-submit button" id="parti" type="submit" value="C'est parti" />
             </div>
           </form>
-          
+
           <!--        ajout bouton close confirm -->
 
-          <div class="cadre"> 
-          <div class="confirm-modal d-none">
-            
-            <div class="message">Merci pour <br> votre inscription
-            <input type="button" id="close-confirm" class="button btn-submit close-confirm" value="fermer" />
-            
+          <div class="cadre">
+            <div class="confirm-modal d-none">
+
+              <div class="message">Merci pour <br> votre inscription
+                <input type="button" id="close-confirm" class="button btn-submit close-confirm" value="fermer" />
+
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -155,9 +157,9 @@
       Copyright 2014 - 2022, GameOn Inc.
     </p>
   </footer>
-  
-  
-  <script src="./starterOnly/modalchange.js"></script>
+
+
+  <script src="./starterOnly/modale.js"></script>
   <script src="./starterOnly/utils/modalForm.js"></script>
 
 </body>

@@ -21,17 +21,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const underAge = document.querySelector('.no-date');
   //const btnCloseConfirm = document.querySelector('#close-Confirm');
   const fermer = document.getElementById('close-confirm');
-
+  
+  
+  function editNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    };
+    
+  }
+  
   // Fonction pour lancer la modale
   const launchModal = () => {
     modalbg.style.display = 'block';
   };
-
+  
   // Fonction pour fermer la modale
   const closeModal = () => {
     modalbg.style.display = 'none';
   };
-
+  
   // Validation du prénom
   const validateFirstNameInput = (firstname) => {
     if (firstname.length < 2 || !/^[a-zA-ZÀ-ú-]+$/.test(firstname)) {
@@ -45,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     }
   };
-
+  
   // Validation du nom
   const validateLastNameInput = (lastname) => {
     if (lastname.length < 2 || !/^[a-zA-ZÀ-ú-]+$/.test(lastname)) {
@@ -58,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nom.classList.remove('invalid-border');
     return true;
   };
-
+  
   // Validation de l'e-mail
   const validateEmailInput = (emailValue) => {
     let pattern = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
@@ -72,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     accept.style.display = 'block';
     return false;
   };
-
+  
   // Validation de la date de naissance
   const validateDateOfBirth = (dateString) => {
     const birthdate = document.getElementById('birthdate');
@@ -84,19 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
       underAgeMessage.style.display = 'none'; // Masque le message d'âge invalide
       return false;
     }
-  
+    
     const dobTimestamp = new Date(dateString).getTime();
     const currentTimestamp = new Date().getTime();
     const ageInMilliseconds = currentTimestamp - dobTimestamp;
     const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365);
-  
+    
     // Vérifie si l'utilisateur a moins de 18 ans
     if (ageInYears < 18) {
       birthdate.classList.add('invalid-border');
       underAgeMessage.style.display = 'block'; // Affiche le message d'âge invalide
       return false;
     }
-  
+    
     // La date de naissance est valide
     birthdate.classList.add('valid-border');
     birthdate.classList.remove('invalid-border');
@@ -104,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   };
   
-
+  
   // Validation du nombre de tournois
   
   const validateTournois = (param) => {
@@ -120,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nombreInvalide.style.display = 'none';
     return true;
   };
-
+  
   // Validation du choix de la ville
   const validateCitySelection = () => {
     if (!document.querySelector('input[name="location"]:checked')) {
@@ -130,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     choixVille.style.display = 'none';
     return true;
   };
-
+  
   // Validation des conditions d'utilisation
   const validateTerms = () => {
     if (!checkbox1.checked) {
@@ -140,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     accept.style.display = 'none';
     return true;
   };
-
+  
   // Validation du formulaire complet
   const isValidForm = () => {
     const textPrenom = prenom.value;
@@ -148,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const textEmail = email.value;
     const textBirth = birthdate.value;
     const textTournoi = quantity.value;
-
+    
     return (
       validateFirstNameInput(textPrenom) &&
       validateLastNameInput(textNom) &&
@@ -157,37 +169,39 @@ document.addEventListener('DOMContentLoaded', () => {
       validateTournois(textTournoi) &&
       validateCitySelection() &&
       validateTerms()
-    );
-  };
-
-  // Événement au clic sur le bouton "C'est parti"
-  partiBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (isValidForm()) {
-      myform.style.display = 'none';
-      message.style.display = 'block';
-    }
-  });
-
-  // Événement de soumission du formulaire
-  myform.addEventListener('submit', (event) => {
-    if (!isValidForm()) {
+      );
+    };
+    
+    // Événement au clic sur le bouton "C'est parti"
+    partiBtn.addEventListener('click', (event) => {
       event.preventDefault();
-    }
+      if (isValidForm()) {
+        myform.style.display = 'none';
+        message.style.display = 'block';
+      }
+    });
+    
+    // Événement de soumission du formulaire
+    myform.addEventListener('submit', (event) => {
+      if (!isValidForm()) {
+        event.preventDefault();
+      }
+    });
+    
+    
+    // Lancement de la modale en cliquant sur les boutons
+    modalBtn.addEventListener("click", launchModal);
+    modaleBtn.addEventListener("click", launchModal);
+    
+    // Fermeture de la modale
+    closeModale.addEventListener('click', closeModal);
+    
+    // fermeture à l'aide du bouton close confirm
+    fermer.addEventListener("click", () => {
+      modalbg.style.display = 'none';
+    });
+    
+    
+    //
   });
-
-
-  // Lancement de la modale en cliquant sur les boutons
-  modalBtn.addEventListener("click", launchModal);
-  modaleBtn.addEventListener("click", launchModal);
-
-  // Fermeture de la modale
-  closeModale.addEventListener('click', closeModal);
   
-  // fermeture à l'aide du bouton close confirm
-  fermer.addEventListener("click", () => {
-    modalbg.style.display = 'none';
-  });
-  
-  
-});
