@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <title>Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="./starterOnly/modal.css" />
+  <link rel="stylesheet" href="./essai.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet">
 </head>
@@ -13,10 +13,8 @@
 <body>
   <div class="topnav" id="myTopnav">
     <div class="header-logo">
-      <img alt="logo" src="./starterOnly/Logo.png" width="auto" height="auto" />
+      <img alt="logo" src="./Logo.png" width="auto" height="auto" />
     </div>
-    
-   
     <div class="main-navbar">
       <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Détails de l'évènement</span></a>
@@ -48,7 +46,7 @@
         </button>
       </div>
       <div class="hero-img">
-        <img src="./starterOnly/bg_img.jpg" alt="img" />
+        <img src="./bg_img.jpg" alt="img" />
       </div>
       <button id="inscritBtn" class="btn-signup modal-btn">
         je m'inscris
@@ -65,7 +63,7 @@
               <small id="small_text" class="small_text">Prénom non valide</small>
             </div>
 
-            <div class="formData">
+              <div class="formData" data-error="la plus belle des motos">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" required="required" id="last" name="last" /><br>
               <small id="small_nom">Le nom n'est pas valide</small>
@@ -89,7 +87,7 @@
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" required="required" id="quantity" name="quantity" min="0"
                 max="99">
-              <div class="nombre-invalide" id="nombre-invalide">Entrer un nombre maximal de 30 tournois</div>
+              <div class="nombre-invalide" id="nombre-invalide">Entrer un nombre maximal de 99 tournois</div>
             </div>
 
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ? <abbr
@@ -143,7 +141,7 @@
           <div class="cadre">
             <div class="confirm-modal d-none">
 
-              <div class="message">Merci pour <br> votre inscription
+              <div class="message">Merci pour  votre inscription
                 <input type="button" id="close-confirm" class="button btn-submit close-confirm" value="fermer" />
 
               </div>
@@ -160,8 +158,8 @@
   </footer>
 
 
-  <script src="./starterOnly/modale.js"></script>
-  
+  <script src="./essai.js"></script>
+
 
 </body>
 
