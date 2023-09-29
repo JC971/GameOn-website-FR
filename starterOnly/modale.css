@@ -371,6 +371,8 @@ input[data-error]::after {
     opacity: 1;
     cursor: pointer;
     transform: scale(.7);
+    color: red;
+    
 }
 
 .close:before,
@@ -391,6 +393,8 @@ input[data-error]::after {
 .close:after {
     transform: rotate(-45deg);
 }
+
+
 
 .btn-submit,
 .btn-signup {
@@ -655,7 +659,7 @@ footer {
 }
 
 .button.btn-submit.close-confirm{
-    display: none;
+    display: block;
     margin-top: 150px;
 }
 
@@ -690,18 +694,16 @@ footer {
 }
 
 .cadre{
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: stretch;
+    background-color: none;
+    height: 500px;
 }
 
 .message{
-    display: none;
+display: none;
    text-align: center;
-   line-height: 2em;
+   line-height: 1.5em;
+   font-size: 36px;
+   margin-top: 50px;
 }
 
 .button.button-submit.close-confirm{
@@ -715,7 +717,21 @@ footer {
     justify-content: flex-end;
     align-items: stretch;
     align-content: stretch;
+    
 }
 .essai{
     margin-top: 60px;
+}
+
+#close-confirm{
+   
+    background: #fe142f;
+    margin-top: 0.5em;
+    padding: 1em;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+  
+   margin-top: 300px;
 }

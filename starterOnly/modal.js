@@ -26,11 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const accept = document.querySelector('.accept');
     const smallText = document.getElementById("small_text");
     const smallNom = document.getElementById('small_nom');
-    const underAge = document.querySelector('.no-date');
     //const btnCloseConfirm = document.querySelector('#close-Confirm');
     const fermer = document.getElementById('close-confirm');
-    
-    
     
     
     // Fonction pour lancer la modale
@@ -43,8 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
         modalbg.style.display = 'none';
     };
     
+    // Formulaire
+    
     // Validation du prénom
-    prenom.addEventListener('input', () => {
+    //creation fonction pour récupérer le changement de valeur dans l'input
+    prenom.addEventListener('input', () => { 
         validateFirstNameInput(prenom.value);
     })
     
@@ -61,57 +61,66 @@ document.addEventListener('DOMContentLoaded', () => {
             return true;
         }
     };
-
-// Ajoutez un écouteur d'événements qui appelle validateLastNameInput
-// l'input change avec le changement de valeur    
     
-nom.addEventListener('input', () => {
-    validateLastNameInput(nom.value);
-});
-//fonction pour la validation du nom
-const validateLastNameInput = (lastname) => {
-    if (lastname === "" || lastname.length < 2 || !/^[a-zA-ZÀ-ú-]+$/.test(lastname)) {
-        nom.classList.add('invalid-border');
-        nom.classList.remove('valid-border');
-        smallNom.style.display = 'block';
-        return false;
-    } else { 
-        nom.classList.add('valid-border');
-        nom.classList.remove('invalid-border');
-        smallNom.style.display = 'none';
-        return true;
-    }
+    
+    // l'input change avec le changement de valeur    
+    
+    nom.addEventListener('input', () => {
+        validateLastNameInput(nom.value);
+    });
+    
+    //fonction pour la validation du nom
+    const validateLastNameInput = (lastname) => {
+        if (lastname === "" || lastname.length < 2 || !/^[a-zA-ZÀ-ú-]+$/.test(lastname)) {
+            nom.classList.add('invalid-border');
+            nom.classList.remove('valid-border');
+            smallNom.style.display = 'block';
+            return false;
+        } else { 
+            nom.classList.add('valid-border');
+            nom.classList.remove('invalid-border');
+            smallNom.style.display = 'none';
+            return true;
+        }
     };
-    /*-------------------------*/
+    
+    //champ email--------------------------------
     email.addEventListener('input', () => {
         validateEmailInput(email.value)
     });
-
+    
     const validateEmailInput = (emailValue) => {
+        const errorMail=document.getElementById('error-email')
         const emailVide= document.querySelector('.email-vide')
         let pattern = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-       if (pattern.test(emailValue)) {
+        if (pattern.test(emailValue)) {
             email.classList.add('valid-border');
             email.classList.remove('invalid-border');
             accept.style.display = 'none';
-            emailVide.style.display='none'
+            emailVide.style.display = 'none';
+            errorMail.style.display = 'none';
             return true;
         }
         email.classList.add('invalid-border');
         email.classList.remove('valid-border');
-        accept.style.display = 'block';
-            return false;
-        
+        errorMail.style.display = 'block';
+        emailVide.style.display='none'
+        return false;
     };
-    
+   
+     // champ date anniversaire
+    birthdate.addEventListener('input', () => {
+    validateDateOfBirth(birthdate.value);
+});
     // Validation de la date de naissance
     const validateDateOfBirth = (dateString) => {
         const birthdate = document.getElementById('birthdate');
+        const underAgeMessage=document.querySelector('.no-date')
         
-        // Vérifie si la date de naissance est vide
         if (!dateString) {
             birthdate.classList.add('invalid-border');
-            underAgeMessage.style.display = 'none'; // Masque le message d'âge invalide
+            birthdate.classList.remove('valid-border');
+            underAgeMessage.style.display = 'block'; // Masque le message d'âge invalide
             return false;
         }
         
@@ -134,7 +143,11 @@ const validateLastNameInput = (lastname) => {
         underAgeMessage.style.display = 'none'; // Masque le message d'âge invalide
         return true;
     };
-    
+
+    // 
+        quantity.addEventListener('input', () => {
+    validateTournois(quantity.value);
+});
     
     // Validation du nombre de tournois
     
@@ -193,7 +206,7 @@ const validateLastNameInput = (lastname) => {
         };
         
         // Événement au clic sur le bouton "C'est parti"
-    partiBtn.addEventListener('click', (event) => {
+        partiBtn.addEventListener('click', (event) => {
             
             event.preventDefault();
             if (isValidForm()) {
@@ -207,7 +220,7 @@ const validateLastNameInput = (lastname) => {
                 validateCitySelection();
                 validateTerms()
             }
-        
+            
         });
         
         // Événement de soumission du formulaire
@@ -232,5 +245,9 @@ const validateLastNameInput = (lastname) => {
         
         
         //
+        document.getElementById('close-confirm').addEventListener('click', function() {
+            console.log('Bouton Fermer cliqué');
+        });
+        
     });
     

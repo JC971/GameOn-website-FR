@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <title>Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="./essai.css" />
+  <link rel="stylesheet" href="./modale.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet">
 </head>
@@ -63,7 +63,7 @@
               <small id="small_text" class="small_text">Prénom non valide</small>
             </div>
 
-              <div class="formData" data-error="la plus belle des motos">
+            <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" required="required" id="last" name="last" /><br>
               <small id="small_nom">Le nom n'est pas valide</small>
@@ -73,14 +73,14 @@
               <label for="email">E-mail</label><br>
               <input class="text-control" type="email" required="required" id="email" name="email" /><br>
               <div class="email-vide">Entrez une adresse mail valide</div>
-              <div class="error-email" id="error-email">L'adresse mail n'est pas valide</div>
+              <small class="error-email" id="error-email">L'adresse mail n'est pas valide</small>
             </div>
 
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" required="required" id="birthdate" name="birthdate" /><br>
-              <div class="no-date">Vous devez avoir 18 ans pour participer aux tournois</div>
-              <div class="right-date"></div>
+              <small class="no-date">Vous devez avoir 18 ans pour participer aux tournois</small>
+
             </div>
 
             <div class="formData">
@@ -141,10 +141,12 @@
           <div class="cadre">
             <div class="confirm-modal d-none">
 
-              <div class="message">Merci pour  votre inscription
-                <input type="button" id="close-confirm" class="button btn-submit close-confirm" value="fermer" />
+              <div class="message">Merci pour votre inscription
+
+                <button type="button" id="close-confirm" class="button btn-submit close-confirm">Fermer</button>
 
               </div>
+
             </div>
           </div>
         </div>
@@ -158,7 +160,7 @@
   </footer>
 
 
-  <script src="./essai.js"></script>
+  <script src="./modal.js"></script>
 
 
 </body>
