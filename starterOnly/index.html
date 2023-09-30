@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8" />
   <title>Reservation</title>
@@ -13,7 +12,9 @@
 <body>
   <div class="topnav" id="myTopnav">
     <div class="header-logo">
-      <img alt="logo" src="./Logo.png" width="auto" height="auto" />
+      <img alt="logo" src="./Logo.png" />
+
+     <!-- <img alt="logo" src="./Logo.png" width="auto" height="auto" /> -->
     </div>
     <div class="main-navbar">
       <a href="#" class="active"><span>Accueil</span></a>
@@ -28,7 +29,7 @@
     </div>
 
   </div>
-  </div>
+  
   <main>
     <div class="hero-section">
       <div class="hero-content">
@@ -60,7 +61,7 @@
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control " type="text" required="required" id="first" name="first" /><br>
-              <small id="small_text" class="small_text">Prénom non valide</small>
+              <small id="small_text" class="small_text">Le prénom doit contenir un minimum de deux lettres</small>
             </div>
 
             <div class="formData">
@@ -120,9 +121,10 @@
               <input class="checkbox-input" type="checkbox" id="checkbox1" name="checkbox1" required />
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
+                </label>
                 <div class="accept-conditions">J'ai lu et accepte les conditions d'utilisation.</div>
                 <div class="accept">Veuillez accepter les conditions d'utilisation</div>
-              </label>
+              
               <br>
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">

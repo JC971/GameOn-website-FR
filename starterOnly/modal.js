@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         emailVide.style.display='none'
         return false;
     };
-   
-     // champ date anniversaire
+    
+    // champ date anniversaire
     birthdate.addEventListener('input', () => {
-    validateDateOfBirth(birthdate.value);
-});
+        validateDateOfBirth(birthdate.value);
+    });
     // Validation de la date de naissance
     const validateDateOfBirth = (dateString) => {
         const birthdate = document.getElementById('birthdate');
@@ -143,11 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
         underAgeMessage.style.display = 'none'; // Masque le message d'âge invalide
         return true;
     };
-
+    
     // 
-        quantity.addEventListener('input', () => {
-    validateTournois(quantity.value);
-});
+    quantity.addEventListener('input', () => {
+        validateTournois(quantity.value);
+    });
     
     // Validation du nombre de tournois
     
