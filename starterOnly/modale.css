@@ -348,6 +348,7 @@ input[data-error]::after {
     border-radius: 4px;
     border: 0;
     background: #c4c4c4;
+   
 }
 
 .checkbox2-label .checkbox-icon::after {
@@ -547,6 +548,7 @@ input[data-error]::after {
     height: 100%;
     display: block;
     padding: 0;
+    object-fit: cover;
 }
 .copyrights {
     color: #fe142f;
@@ -684,6 +686,11 @@ footer {
     font-size: 18px;
     color: red;
 }
+.accept-conditions{
+    font-size: 14px;
+    display: none;
+    color: red;
+}
 
 .no-date{
     display: none;
@@ -694,6 +701,7 @@ footer {
 .email-vide{
     color: red;
     font-size: 16px;
+   
 }
 
 .choix-ville{

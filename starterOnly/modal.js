@@ -23,11 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const quantity = document.getElementById('quantity');
     const checkbox1 = document.getElementById('checkbox1');
     const choixVille = document.querySelector('.choix-ville');
-    const accept = document.querySelector('.accept');
+    const acceptCond = document.querySelector('.accept-conditions');
     const smallText = document.getElementById("small_text");
     const smallNom = document.getElementById('small_nom');
     //const btnCloseConfirm = document.querySelector('#close-Confirm');
     const fermer = document.getElementById('close-confirm');
+    const radioButtons = document.querySelectorAll('input[name="location"]');
     
     
     // Fonction pour lancer la modale
@@ -62,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    
     // l'input change avec le changement de valeur    
     
     nom.addEventListener('input', () => {
@@ -91,22 +91,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const validateEmailInput = (emailValue) => {
         const errorMail=document.getElementById('error-email')
-        const emailVide= document.querySelector('.email-vide')
+        
         let pattern = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
         if (pattern.test(emailValue)) {
             email.classList.add('valid-border');
             email.classList.remove('invalid-border');
-            accept.style.display = 'none';
-            emailVide.style.display = 'none';
             errorMail.style.display = 'none';
             return true;
         }
         email.classList.add('invalid-border');
         email.classList.remove('valid-border');
         errorMail.style.display = 'block';
-        emailVide.style.display='none'
         return false;
     };
+    
     
     // champ date anniversaire
     birthdate.addEventListener('input', () => {
@@ -120,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!dateString) {
             birthdate.classList.add('invalid-border');
             birthdate.classList.remove('valid-border');
-            underAgeMessage.style.display = 'block'; // Masque le message d'âge invalide
+            underAgeMessage.style.display = 'block'; 
             return false;
         }
         
@@ -167,22 +165,30 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // Validation du choix de la ville
-    const validateCitySelection = () => {
-        if (!document.querySelector('input[name="location"]:checked')) {
-            choixVille.style.display = 'block';
-            return false;
-        }
-        choixVille.style.display = 'none';
-        return true;
+const validateCitySelection = () => {
+    if (!document.querySelector('input[name="location"]:checked')) {
+        choixVille.style.display = 'block';
+        return false;
+    }
+    choixVille.style.display = 'none';
+    return true;
     };
     
+    // Ajout des écouteurs d'événements pour tous les boutons radio
+radioButtons.forEach(radioButton => {
+    radioButton.addEventListener('change', validateCitySelection);
+});
+
     // Validation des conditions d'utilisation
+checkbox1.addEventListener('input', () => {
+    validateTerms();
+});
     const validateTerms = () => {
         if (!checkbox1.checked) {
-            accept.style.display = 'block';
+            acceptCond.style.display = 'block';
             return false;
         }
-        accept.style.display = 'none';
+        acceptCond.style.display = 'none';
         return true;
     };
     
