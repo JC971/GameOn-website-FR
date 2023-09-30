@@ -62,7 +62,8 @@
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control " type="text" required="required" id="first" name="first" /><br>
-              <small id="small_text" class="small_text">Veuillez entrer un prénom valide d'au moins 2 caractères.</small>
+              <small id="small_text" class="small_text">Veuillez entrer un prénom valide d'au moins 2
+                caractères.</small>
             </div>
 
             <div class="formData">
@@ -74,7 +75,7 @@
             <div class="formData">
               <label for="email">E-mail</label><br>
               <input class="text-control" type="email" required="required" id="email" name="email" /><br>
-             <!---  <div class="email-vide"></div>-->
+              <!---  <div class="email-vide"></div>-->
               <small class="error-email" id="error-email">L'adresse mail n'est pas valide</small>
             </div>
 
@@ -125,36 +126,34 @@
                 J'ai lu et accepte les conditions d'utilisation.
               </label>
               <div class="accept-conditions">Veuillez accepter les conditions d'utilisation</div>
-           
 
-          <br>
-            <input class="checkbox-input" type="checkbox" id="checkbox2" />
-            <label class="checkbox2-label" for="checkbox2">
-              <span class="checkbox-icon"></span>
-              Je souhaite être prévenu des prochains évènements.
-            </label>
-        </div>
 
-        <div class="essai">
-          <input class="btn-submit button" id="parti" type="submit" value="C'est parti" />
-        </div>
-        </form>
-
-        <!--        ajout bouton close confirm -->
-
-        <div class="cadre">
-          <div class="confirm-modal d-none">
-
-            <div class="message">Merci pour votre inscription
-
-              <button type="button" id="close-confirm" class="button btn-submit close-confirm">Fermer</button>
-
+              <br>
+              <input class="checkbox-input" type="checkbox" id="checkbox2" />
+              <label class="checkbox2-label" for="checkbox2">
+                <span class="checkbox-icon"></span>
+                Je souhaite être prévenu des prochains évènements.
+              </label>
             </div>
 
+            <div class="essai">
+              <input class="btn-submit button" id="parti" type="submit" value="C'est parti" />
+            </div>
+          </form>
+
+          <!--        ajout bouton close confirm -->
+
+          
+          <div class="confirm-modal d-none">
+            <div class="message">Merci pour votre inscription
+              <div class="ferme"> 
+              <button type="button" id="close-confirm" class="button btn-submit
+               close-confirm">Fermer</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </main>
   <footer>
