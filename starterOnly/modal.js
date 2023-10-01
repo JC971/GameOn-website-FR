@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Vérifie si l'utilisateur a moins de 18 ans
         if (ageInYears < 18) {
             birthdate.classList.add('invalid-border');
-            birthdate.classList.rmove('valid-border');
+            birthdate.classList.remove('valid-border');
             underAgeMessage.style.display = 'block'; // Affiche le message d'âge invalide
             return false;
         }
